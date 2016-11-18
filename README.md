@@ -1,25 +1,32 @@
 # TrabalhoSBD
 Trabalho Final
-Considerando o tema base abaixo, elabore novos requisitos para esse banco,
-de forma a atender as especificações do Projeto
+Considerando o tema base abaixo, elabore novos requisitos para esse banco, de forma a atender as especificações do Projeto
 Sistema de Consulta de Opiniões
-Requisitos: Pessoas podem realizar e emitir sua opinião por meio de sistema eletrônico
-Das pessoas são armazenados: Nome, CPF, E-Mail Institucional, E-Mail Secundário, Data
-Nascimento.
-Uma pessoa pode ser professor, aluno, técnico terceirizado. As pessoas participam do sistema
-por meio de respostas as questões presentes nos formulários
+
+Requisitos: Pessoas podem realizar e emitir sua opinião por meio de sistema eletrônico 
+
+Das pessoas são armazenados: Nome, CPF, E-Mail Institucional, E-Mail Secundário, Data Nascimento.
+
+Uma pessoa pode ser professor, aluno, técnico terceirizado. As pessoas participam do sistema por meio de respostas as questões presentes nos formulários
+
 Professores: SIAPE, Unidade Acadêmica, Regime de Trabalho(Dedicação exclusiva, 20hrs e
 40hrs)
+
 Alunos: Nro de Matricula e Curso.
+
 Técnicos: SIAPE e Unidade Administrativa ou Acadêmica.
+
 Terceirizados: Empresa e Setor Atuação(Segurança, Limpeza, etc).
-Unidades Acadêmicas: Sigla char(5), Nome e Área de Conhecimento(Exatas, Humanas e
-Biológicas).
+
+Unidades Acadêmicas: Sigla char(5), Nome e Área de Conhecimento(Exatas, Humanas e Biológicas).
+
 Curso: Sigla, Nome. Todo curso está vinculado a uma unidade acadêmica.
+
 Unidade Administrativa: Sigla e Nome.
+
 Questões: Descrição da pergunta, ID e possíveis respostas.
-Respostas: Id, resposta em formato de texto, falso, verdadeiro, sim, não, abstenção e múltipla
-escolha. Nas questões de múltipla escolha podemos escolher uma ou mais opções.
+Respostas: Id, resposta em formato de texto, falso, verdadeiro, sim, não, abstenção e múltipla escolha. Nas questões de múltipla escolha podemos escolher uma ou mais opções.
+
 Formulário: Formulário é um conjunto de questões e possui um ID, um nome e a pessoa que o
 criou. Um formulário pode ser restrito dependendo do tipo de pessoa que responde o
 formulário. Exemplo respondido por professores e alunos, só por aluno, etc.O formulário
