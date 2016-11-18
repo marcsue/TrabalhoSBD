@@ -12,6 +12,10 @@ public class UnidadeAcademica
 		this.areaConhecimento = areaConhecimento;
 	}
 
+	public UnidadeAcademica() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getSigla() {
 		return sigla;
 	}

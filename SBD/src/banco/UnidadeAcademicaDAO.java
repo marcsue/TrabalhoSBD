@@ -2,7 +2,9 @@ package banco;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import areasUniversidade.UnidadeAcademica;
 
@@ -36,4 +38,63 @@ public class UnidadeAcademicaDAO
 			return false;
 		}
 	}
+	
+	public ArrayList<UnidadeAcademica> buscaTodas()
+	{
+		try
+		{
+			ArrayList<UnidadeAcademica> unidades = new ArrayList<UnidadeAcademica>();
+			
+			String sql = "select * from unidadeAcademica";
+			PreparedStatement stmt  = connection.prepareStatement(sql);
+			
+			ResultSet resultado = stmt.executeQuery();
+			
+			while(resultado.next())
+			{
+				UnidadeAcademica uni =  new UnidadeAcademica();
+				
+				//o set é de unidade academica o objeto, e o get é do banco de dados o paramentro do get tem que ser igual o nome da coluna no Banco
+				uni.setSigla(resultado.getString("siglaUA"));
+				uni.setNome(resultado.getString("nome"));
+				uni.setAreaConhecimento(resultado.getString("areaConhecimento"));
+				
+				unidades.add(uni);
+			}
+			stmt.close();
+			
+			return unidades;
+			
+		}
+		catch (SQLException e)
+		{
+			System.out.println(e);
+			
+			return null;
+		}
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
