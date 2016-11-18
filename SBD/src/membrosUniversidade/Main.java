@@ -1,13 +1,17 @@
 package membrosUniversidade;
 
-import java.util.Date;
+import areasUniversidade.UnidadeAcademica;
+import banco.UnidadeAcademicaDAO;
 
 public class Main {
 	
-	public static void main (String[] args)
+	public static void main (String[] args) throws ClassNotFoundException
 	{
-		Date data = new Date();
-
+		UnidadeAcademica unidade = new UnidadeAcademica("facom", "facul de comp", "exatas");
+		
+		UnidadeAcademicaDAO uniDAO = new UnidadeAcademicaDAO();
+		
+		System.out.println(uniDAO.insereUnidade(unidade));
 	}
 
 }

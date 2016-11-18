@@ -2,16 +2,16 @@ package membrosUniversidade;
 
 import java.util.Date;
 
-import areasUniversidade.UnidadeAcademicas;
+import areasUniversidade.UnidadeAcademica;
 
 public class Professor extends Pessoas 
 {
 	private String siape;
-	private UnidadeAcademicas unidadeAcademica;
+	private UnidadeAcademica unidadeAcademica;
 	private String regimeTrabalho;
 	
 	public Professor(String cpf, String nome, String emailInstitucional,
-			String emailSecundario, Date nascimento, String siape, UnidadeAcademicas unidadeAcademica,
+			String emailSecundario, Date nascimento, String siape, UnidadeAcademica unidadeAcademica,
 			String regimeTrabalho) 
 	{
 		
@@ -29,11 +29,11 @@ public class Professor extends Pessoas
 		this.siape = siape;
 	}
 
-	public UnidadeAcademicas getUnidadeAcademica() {
+	public UnidadeAcademica getUnidadeAcademica() {
 		return unidadeAcademica;
 	}
 
-	public void setUnidadeAcademica(UnidadeAcademicas unidadeAcademica) {
+	public void setUnidadeAcademica(UnidadeAcademica unidadeAcademica) {
 		this.unidadeAcademica = unidadeAcademica;
 	}
 

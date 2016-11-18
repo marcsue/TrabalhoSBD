@@ -7,12 +7,12 @@ import areasUniversidade.*;
 public class Tecnico extends Pessoas 
 {
 	private String siape;
-	private UnidadeAcademicas unidadeAcademica;
+	private UnidadeAcademica unidadeAcademica;
 	private UnidadeAdministrativa unidadeAdministrativa;
 	
 	
 	public Tecnico(String cpf, String nome, String emailInstitucional,
-			String emailSecundario, Date nascimento, String siape, UnidadeAcademicas unidadeAcademica ) 
+			String emailSecundario, Date nascimento, String siape, UnidadeAcademica unidadeAcademica ) 
 	{
 		
 		super(cpf, nome, emailInstitucional, emailSecundario, nascimento);
@@ -41,11 +41,11 @@ public class Tecnico extends Pessoas
 		this.siape = siape;
 	}
 
-	public UnidadeAcademicas getUnidadeAcademica() {
+	public UnidadeAcademica getUnidadeAcademica() {
 		return unidadeAcademica;
 	}
 
-	public void setUnidadeAcademica(UnidadeAcademicas unidadeAcademica) {
+	public void setUnidadeAcademica(UnidadeAcademica unidadeAcademica) {
 		this.unidadeAcademica = unidadeAcademica;
 	}
 

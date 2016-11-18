@@ -1,0 +1,4 @@
+user do banco: root
+senha do banco: root
+
+se a de vocês não for essa, tem que alterar na classe ConnectionFactory

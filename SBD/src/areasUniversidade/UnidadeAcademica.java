@@ -1,12 +1,12 @@
 package areasUniversidade;
 
-public class UnidadeAcademicas 
+public class UnidadeAcademica 
 {
 	private String sigla;
 	private String nome;
 	private String areaConhecimento;
 	
-	public UnidadeAcademicas(String sigla, String nome, String areaConhecimento) {
+	public UnidadeAcademica(String sigla, String nome, String areaConhecimento) {
 		this.sigla = sigla;
 		this.nome = nome;
 		this.areaConhecimento = areaConhecimento;

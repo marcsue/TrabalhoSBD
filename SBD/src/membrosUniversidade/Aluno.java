@@ -23,8 +23,6 @@ public class Aluno extends Pessoas
 		super();
 
 	}
-
-
 	
 	public String getMatricula() {
 		return matricula;
