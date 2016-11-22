@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import areasUniversidade.UnidadeAcademica;
 
@@ -21,7 +22,7 @@ public class UnidadeAcademicaDAO
 	{
 		try
 		{
-			String sql = "insert into unidadeAcademica (siglaUA, nome, areaConhecimento) values(?,?,?)";
+			String sql = "INSERT INTO unidadeAcademica (siglaUA, nome, areaConhecimento) VALUES(?,?,?);";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
 			stmt.setString(1,unidadeAcademica.getSigla());
@@ -39,13 +40,13 @@ public class UnidadeAcademicaDAO
 		}
 	}
 	
-	public ArrayList<UnidadeAcademica> buscaTodas()
+	public List<UnidadeAcademica> buscaTodas()
 	{
 		try
 		{
-			ArrayList<UnidadeAcademica> unidades = new ArrayList<UnidadeAcademica>();
+			List<UnidadeAcademica> unidades = new ArrayList<UnidadeAcademica>();
 			
-			String sql = "select * from unidadeAcademica";
+			String sql = "SELECT * FROM unidadeAcademica;";
 			PreparedStatement stmt  = connection.prepareStatement(sql);
 			
 			ResultSet resultado = stmt.executeQuery();

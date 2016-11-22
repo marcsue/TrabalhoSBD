@@ -25,3 +25,8 @@ CREATE TABLE curso (
 
 	--CONSTRAINT contaPk PRIMARY KEY (idConta,nomeAgenciaConta),
 	--CONSTRAINT contaNomeAgenciaFk FOREIGN KEY (nomeAgenciaConta) REFERENCES Agencia (nome)
+
+-- se necessario criar usuario e garantir poderes de super user use
+--CREATE USER root WITH PASSWORD 'root';
+--GRANT ALL PRIVILEGES ON DATABASE "bancodb" to root;
+--ALTER USER root WITH SUPERUSER;
