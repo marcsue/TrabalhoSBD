@@ -2,24 +2,75 @@ CREATE DATABASE bancodb;
 
 CREATE TABLE unidadeAcademica
 (
-	siglaUA varchar(5) NOT NULL,
+    siglaUAC varchar(5) NOT NULL,
     nome varchar(60),
     areaConhecimento varchar(10),
 
-    CONSTRAINT siglaUA PRIMARY KEY (siglaUA)
+    CONSTRAINT uacPk PRIMARY KEY (siglaUAC)
 
 );
 
 
-CREATE TABLE curso (
-    siglaC varchar(5) NOT NULL, 
+CREATE TABLE curso 
+(
+    sigla varchar(3) NOT NULL, 
     nome varchar(60),
-    unidade varchar(5),
+    unidadeAC varchar(5),
   
-    CONSTRAINT cursoPk PRIMARY KEY (siglaC),
-    CONSTRAINT cursoFk FOREIGN KEY (unidade) REFERENCES unidadeAcademica (siglaUA)
+    CONSTRAINT cursoPk PRIMARY KEY (sigla),
+    CONSTRAINT cursoFk FOREIGN KEY (unidadeAC) REFERENCES unidadeAcademica (siglaUAC)
     
 );
+
+
+CREATE TABLE unidadeAdministrativa
+(
+	siglaUADM varchar(5) NOT NULL,
+    nome varchar(60),
+    areaConhecimento varchar(10),
+
+    CONSTRAINT siglaUADM PRIMARY KEY (siglaUADM)
+
+);
+
+
+CREATE TABLE aluno
+(
+	cpf varchar(11) NOT NULL,
+	nome varchar(60),
+	emailInstitucional varchar (30),
+	emailSecundario varchar (30),
+	dataNascimento date,
+	matricula varchar(11),
+	siglaCurso varchar(3),
+
+	CONSTRAINT alunoPk PRIMARY KEY (cpf),
+	CONSTRAINT alunoFk FOREIGN KEY (siglaCurso) REFERENCES curso (sigla)
+
+);
+
+
+
+CREATE TABLE professor
+(
+	cpf varchar(11) NOT NULL,
+	nome varchar(60),
+	emailInstitucional varchar (30),
+	emailSecundario varchar (30),
+	dataNascimento date,
+	siape varchar (12),
+	siglaUAC varchar(5),
+
+	CONSTRAINT profPk PRIMARY KEY (cpf),
+	CONSTRAINT profFk FOREIGN KEY (siglaUAC) REFERENCES unidadeAcademica (siglaUAC)
+
+); 
+
+
+
+
+
+--date insert  1963-09-01
 
 
 
