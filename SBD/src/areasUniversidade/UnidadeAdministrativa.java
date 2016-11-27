@@ -5,6 +5,7 @@ public class UnidadeAdministrativa
 	private String sigla;
 	private String nome;
 	
+	public UnidadeAdministrativa() {}
 	public UnidadeAdministrativa(String sigla, String nome) {
 		
 		this.sigla = sigla;

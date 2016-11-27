@@ -83,6 +83,13 @@ CREATE TABLE terceirizado
 ); 
 
 
+CREATE TABLE FORMULARIO
+(
+	id serial NOT NULL,
+	descricao varchar(15),
+
+	CONSTRAINT formPK PRIMARY KEY (id),
+);
 
 --date insert  1963-09-01
 

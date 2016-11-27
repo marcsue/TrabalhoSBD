@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import areasUniversidade.Curso;
 import areasUniversidade.UnidadeAcademica;
 
 public class UnidadeAcademicaDAO 
@@ -40,11 +41,11 @@ public class UnidadeAcademicaDAO
 		}
 	}
 	
-	public List<UnidadeAcademica> buscaTodas()
+	public ArrayList<UnidadeAcademica> buscaTodas()
 	{
 		try
 		{
-			List<UnidadeAcademica> unidades = new ArrayList<UnidadeAcademica>();
+			ArrayList<UnidadeAcademica> unidades = new ArrayList<UnidadeAcademica>();
 			
 			String sql = "SELECT * FROM unidadeAcademica;";
 			PreparedStatement stmt  = connection.prepareStatement(sql);
@@ -56,7 +57,7 @@ public class UnidadeAcademicaDAO
 				UnidadeAcademica uni =  new UnidadeAcademica();
 				
 				//o set é de unidade academica o objeto, e o get é do banco de dados o paramentro do get tem que ser igual o nome da coluna no Banco
-				uni.setSigla(resultado.getString("siglaUA"));
+				uni.setSigla(resultado.getString("siglaUAC"));
 				uni.setNome(resultado.getString("nome"));
 				uni.setAreaConhecimento(resultado.getString("areaConhecimento"));
 				
@@ -71,6 +72,38 @@ public class UnidadeAcademicaDAO
 		{
 			System.out.println(e);
 			
+			return null;
+		}
+	}
+	
+	public UnidadeAcademica buscaSigla(String sigla) throws SQLException
+	{
+		
+		try
+		{
+			UnidadeAcademica unidadeAC = new UnidadeAcademica();
+			
+			String sql = "SELECT * FROM unidadeAcademica WHERE siglaUAC = ?;";
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			
+			stmt.setString(1,sigla);
+			
+			ResultSet resultado = stmt.executeQuery();
+			
+			while(resultado.next())
+			{
+				
+				unidadeAC.setSigla(resultado.getString("siglaUAC"));
+				unidadeAC.setNome(resultado.getString("nome"));
+				unidadeAC.setAreaConhecimento(resultado.getString("areaConhecimento"));
+
+			}
+			stmt.close();
+			
+			return unidadeAC;
+		}
+		catch (SQLException e)
+		{
 			return null;
 		}
 	}

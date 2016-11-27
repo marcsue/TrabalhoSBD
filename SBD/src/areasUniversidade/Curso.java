@@ -6,12 +6,16 @@ public class Curso
 	private String nome;
 	private UnidadeAcademica unidade;
 	
+	
+	public Curso (){}
+	
 	public Curso(String sigla, String nome, UnidadeAcademica unidade) {
 		super();
 		this.sigla = sigla;
 		this.nome = nome;
 		this.unidade = unidade;
 	}
+
 
 	public String getSigla() {
 		return sigla;
