@@ -77,25 +77,3 @@ public class UnidadeAcademicaDAO
 	
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

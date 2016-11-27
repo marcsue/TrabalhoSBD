@@ -59,6 +59,7 @@ CREATE TABLE professor
 	emailSecundario varchar (30),
 	dataNascimento date,
 	siape varchar (12),
+	regimeTrabalho varchar (3),
 	siglaUAC varchar(5),
 
 	CONSTRAINT profPk PRIMARY KEY (cpf),
@@ -67,6 +68,19 @@ CREATE TABLE professor
 ); 
 
 
+CREATE TABLE terceirizado
+(
+	cpf varchar(11) NOT NULL,
+	nome varchar(60),
+	emailInstitucional varchar (30),
+	emailSecundario varchar (30),
+	dataNascimento date,
+	empresa varchar (20),
+	setor varchar(15),
+
+	CONSTRAINT terceirizadoPk PRIMARY KEY (cpf)
+
+); 
 
 
 
