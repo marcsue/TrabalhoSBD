@@ -10,6 +10,8 @@ public class Professor extends Pessoas
 	private UnidadeAcademica unidadeAcademica;
 	private String regimeTrabalho;
 	
+	public Professor (){}
+	
 	public Professor(String cpf, String nome, String emailInstitucional,
 			String emailSecundario, Date nascimento, String siape, UnidadeAcademica unidadeAcademica,
 			String regimeTrabalho) 

@@ -7,6 +7,8 @@ public class Terceirizado extends Pessoas
 	private String empresa;
 	private String setor;
 	
+	public Terceirizado () {}
+	
 	public Terceirizado(String cpf, String nome, String emailInstitucional,
 			String emailSecundario, Date nascimento, String empresa, String setor) 
 	{

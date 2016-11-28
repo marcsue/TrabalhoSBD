@@ -90,6 +90,40 @@ public class AlunoDAO
 		}
 	}
 	
+	public boolean buscaCpf(String cpf)
+	{
+		try
+		{
+			Aluno aluno =  new Aluno();	
+			
+			String sql = "SELECT cpf FROM aluno WHERE cpf=?;";
+			PreparedStatement stmt  = connection.prepareStatement(sql);
+			stmt.setString(1,cpf);
+			
+			ResultSet resultado = stmt.executeQuery();
+			
+			while(resultado.next())
+			{
+				
+				
+				aluno.setCpf(resultado.getString("cpf"));
+			}
+			stmt.close();
+			
+			if(aluno.getCpf()==null)
+				return false;
+			else
+				return true;
+		}
+		catch (SQLException e)
+		{
+			System.out.println(e);
+			
+			return false;
+		}
+		
+	}
+	
 
 }
 
