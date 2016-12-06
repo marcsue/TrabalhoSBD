@@ -1,23 +1,26 @@
 package interfaces;
 
-import java.awt.Color;
-import java.util.ArrayList;
-
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class Janela extends JFrame
 {
 	//DECLARANDO PAINEIS
+	public Superior superior;
+	
 	public CriarFormulario criaFormulario;
 	public ResponderFormulario responderFormulario;
+	public ResultadoFormulario resultadoFormulario;
+	
 	public VerificaUsuario verifica;
-	public CadastroAluno cadastrarAluno;
 	public EscolhaPessoa escolhaPessoa;
 	
-	public Superior painelSuperior;
+	public CadastroAluno cadastrarAluno;
+	public CadastroProfessor cadastrarProfessor;
+	public CadastroTecnico cadastrarTecnico;
+	public CadastroTerceirizado cadastrarTerceirizado;
+	
+	
+	
 	
 	private static Janela instance;
 	
@@ -49,8 +52,6 @@ public class Janela extends JFrame
 		}
 	}
 	
-	
-	
 	public CriarFormulario getCriaFormulario() {
 		return criaFormulario;
 	}
@@ -69,11 +70,18 @@ public class Janela extends JFrame
 	public void setVerifica(VerificaUsuario verifica) {
 		this.verifica = verifica;
 	}
-	public Superior getPainelSuperior() {
-		return painelSuperior;
+	public Superior getSuperior() {
+		return superior;
 	}
-	public void setPainelSuperior(Superior painelSuperior) {
-		this.painelSuperior = painelSuperior;
+	public void setSuperior(Superior superior) {
+		this.superior = superior;
+	}
+	
+	public EscolhaPessoa getEscolhaPessoa() {
+		return escolhaPessoa;
+	}
+	public void setEscolhaPessoa(EscolhaPessoa escolhaPessoa) {
+		this.escolhaPessoa = escolhaPessoa;
 	}
 	
 	public CadastroAluno getCadastrarAluno() {
@@ -83,11 +91,33 @@ public class Janela extends JFrame
 		this.cadastrarAluno = cadastrarAluno;
 	}
 	
-	public EscolhaPessoa getEscolhaPessoa() {
-		return escolhaPessoa;
+	public CadastroProfessor getCadastrarProfessor() {
+		return cadastrarProfessor;
 	}
-	public void setEscolhaPessoa(EscolhaPessoa escolhaPessoa) {
-		this.escolhaPessoa = escolhaPessoa;
+	public void setCadastrarProfessor(CadastroProfessor cadastrarProfessor) {
+		this.cadastrarProfessor = cadastrarProfessor;
+	}
+	
+
+	public CadastroTecnico getCadastrarTecnico() {
+		return cadastrarTecnico;
+	}
+	public void setCadastrarTecnico(CadastroTecnico cadastrarTecnico) {
+		this.cadastrarTecnico = cadastrarTecnico;
+	}
+	
+	public CadastroTerceirizado getCadastrarTerceirizado() {
+		return cadastrarTerceirizado;
+	}
+	public void setCadastrarTerceirizado(CadastroTerceirizado cadastrarTerceirizado) {
+		this.cadastrarTerceirizado = cadastrarTerceirizado;
+	}
+	
+	public ResultadoFormulario getResultadoFormulario() {
+		return resultadoFormulario;
+	}
+	public void setResultadoFormulario(ResultadoFormulario resultadoFormulario) {
+		this.resultadoFormulario = resultadoFormulario;
 	}
 	//METODO INICIA TELA
 	public void IniciaTela()
@@ -102,26 +132,47 @@ public class Janela extends JFrame
 		responderFormulario.setVisible(false);
 		this.getContentPane().add(responderFormulario);
 		
+		resultadoFormulario = new ResultadoFormulario();
+		resultadoFormulario.setBounds(10, 200, 1024, 680);
+		resultadoFormulario.setVisible(false);
+		this.getContentPane().add(resultadoFormulario);
+		
+		
 		verifica = new VerificaUsuario();
 		verifica.setBounds(10, 200, 1024, 680);
-		verifica.setVisible(false);
+		verifica.setVisible(true);
 		this.getContentPane().add(verifica);
-		
-		cadastrarAluno = new CadastroAluno();
-		cadastrarAluno.setBounds(10, 200, 1024, 680);
-		cadastrarAluno.setVisible(false);
-		this.getContentPane().add(cadastrarAluno);
 		
 		escolhaPessoa = new EscolhaPessoa();
 		escolhaPessoa.setBounds(10, 200, 1024, 680);
 		escolhaPessoa.setVisible(false);
 		this.getContentPane().add(escolhaPessoa);
 		
+		cadastrarAluno = new CadastroAluno();
+		cadastrarAluno.setBounds(10, 200, 1024, 680);
+		cadastrarAluno.setVisible(false);
+		this.getContentPane().add(cadastrarAluno);
 		
-		painelSuperior = new Superior();
-		painelSuperior.setBounds(10, 10, 1366, 768);
-		painelSuperior.setVisible(true);
-		this.getContentPane().add(painelSuperior);
+		cadastrarProfessor = new CadastroProfessor();
+		cadastrarProfessor.setBounds(10, 200, 1024, 680);
+		cadastrarProfessor.setVisible(false);
+		this.getContentPane().add(cadastrarProfessor);
+
+		cadastrarTecnico = new CadastroTecnico();
+		cadastrarTecnico.setBounds(10, 200, 1024, 680);
+		cadastrarTecnico.setVisible(false);
+		this.getContentPane().add(cadastrarTecnico);
+		
+		cadastrarTerceirizado = new CadastroTerceirizado();
+		cadastrarTerceirizado.setBounds(10, 200, 1024, 680);
+		cadastrarTerceirizado.setVisible(false);
+		this.getContentPane().add(cadastrarTerceirizado);
+		
+		
+		superior = new Superior();
+		superior.setBounds(10, 10, 1366, 768);
+		superior.setVisible(false);
+		this.getContentPane().add(superior);
 		
 	}
 }

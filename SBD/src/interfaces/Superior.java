@@ -14,6 +14,7 @@ public class Superior extends JPanel implements ActionListener
 	public JButton criarFormulario;
 	public JButton resFormulario;
 	public JButton resultados;
+	public Integer opcao=0;
 	
 	public Superior() {
 		//CRIANDO A JANELA SEM LAYOUT E DEFININDO O TAMANHO
@@ -44,29 +45,39 @@ public class Superior extends JPanel implements ActionListener
 		this.setVisible(true);
 		
 	}
+	
+	
+
+	public Integer getOpcao() {
+		return opcao;
+	}
+
+
+
+	public void setOpcao(Integer opcao) {
+		this.opcao = opcao;
+	}
+
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) 
-	{
-		
+	{	
 		if(e.getSource().equals(criarFormulario))
 		{
-			Janela.getInstance().getVerifica().setVisible(true);
-			Janela.getInstance().getCriaFormulario().setVisible(false);
-			Janela.getInstance().getResponderFormulario().setVisible(false);
-			Janela.getInstance().getCadastrarAluno().setVisible(false);
-			Janela.getInstance().getEscolhaPessoa().setVisible(false);
-			
-			resultados.setVisible(false);
-			resFormulario.setVisible(false);
-			criarFormulario.setVisible(false);
-			
+			Janela.getInstance().getCriaFormulario().setVisible(true);
+			Janela.getInstance().getSuperior().setVisible(false);
 		}
 		
 		else if (e.getSource().equals(resFormulario))
-		{
-			Janela.getInstance().getCriaFormulario().setVisible(false);
+		{			
 			Janela.getInstance().getResponderFormulario().setVisible(true);
+			Janela.getInstance().getSuperior().setVisible(false);
+		}
+		else if (e.getSource().equals(resultados))
+		{
+			Janela.getInstance().getResultadoFormulario().setVisible(true);
+			Janela.getInstance().getSuperior().setVisible(false);
 		}
 		
 	}

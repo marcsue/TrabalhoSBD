@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import areasUniversidade.UnidadeAcademica;
+import areasUniversidade.Unidade;
 import membrosUniversidade.Professor;
 import membrosUniversidade.Terceirizado;
 

@@ -52,18 +52,9 @@ public class VerificaUsuario  extends JPanel implements ActionListener{
 		this.add(ok);
 		ok.addActionListener(this);
 			
-		//BOTAO VOLTAR
-		voltar = new JButton("VOLTAR");
-		voltar.setBounds(520, 130, 100, 20);
-		voltar.setVisible(true);
-		this.add(voltar);
-		voltar.addActionListener(this);
+		
 		
 	}
-	
-	
-	
-	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -75,21 +66,18 @@ public class VerificaUsuario  extends JPanel implements ActionListener{
 				if (tipo==0)
 				{	
 					JOptionPane.showMessageDialog(null, "Você ainda não é cadastrado, vamos lá!");
+					
 					Janela.getInstance().getVerifica().setVisible(false);
-					Janela.getInstance().getCriaFormulario().setVisible(false);
-					Janela.getInstance().getResponderFormulario().setVisible(false);
-					Janela.getInstance().getCadastrarAluno().setVisible(false);
-					Janela.getInstance().getEscolhaPessoa().setVisible(true);
-					
-					cpf.setVisible(false);
-					ok.setVisible(false);
-					caixaCpf.setVisible(false);
-					voltar.setVisible(false);
-					
+					Janela.getInstance().getEscolhaPessoa().setVisible(true);				
 				
 				}
 				else
+				{
 					JOptionPane.showMessageDialog(null, "Você já é cadastrado, vamos lá!");
+					
+					Janela.getInstance().getVerifica().setVisible(false);
+					Janela.getInstance().getSuperior().setVisible(true);
+				}
 					
 			} catch (ClassNotFoundException e1) {
 				// TODO Auto-generated catch block
@@ -99,15 +87,7 @@ public class VerificaUsuario  extends JPanel implements ActionListener{
 		
 			
 		}
-		if (e.getSource().equals(voltar))
-		{
-			Janela.getInstance().IniciaTela();
-			
-			cpf.setVisible(false);
-			ok.setVisible(false);
-			caixaCpf.setVisible(false);
-			voltar.setVisible(false);
-		}	
+		
 		
 	}
 	
@@ -116,17 +96,17 @@ public class VerificaUsuario  extends JPanel implements ActionListener{
 	{
 		AlunoDAO aluno = new AlunoDAO();
 		ProfessorDAO prof = new ProfessorDAO();
-		TerceirizadoDAO terc = new TerceirizadoDAO();
-				
+		TerceirizadoDAO terceirizado = new TerceirizadoDAO();
+		//TecnicoDAO tecnico = new TecnicoDAO();		
+		
 		if(aluno.buscaCpf(cpf))
-		{
-			//System.out.println("ok");
 			return 1;
-		}
 		else if (prof.buscaCpf(cpf))
 			return 2;
-		else if (terc.buscaCpf(cpf))
+		else if (terceirizado.buscaCpf(cpf))
 			return 3;
+		/*else if (tecnico.buscaCpf(cpf))
+			return 4;*/
 		else
 			return 0;
 		//falta fazer o do tecnico

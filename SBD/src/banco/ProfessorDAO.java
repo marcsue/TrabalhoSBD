@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import areasUniversidade.UnidadeAcademica;
+import areasUniversidade.Unidade;
 import membrosUniversidade.Aluno;
 import membrosUniversidade.Professor;
 
@@ -54,8 +54,8 @@ private Connection connection;
 		try
 		{
 			ArrayList<Professor> professores = new ArrayList<Professor>();
-			UnidadeAcademicaDAO unidadeAcademicaDAO = new UnidadeAcademicaDAO();
-			UnidadeAcademica unidadeAcademica = new UnidadeAcademica();
+			UnidadeDAO unidadeAcademicaDAO = new UnidadeDAO();
+			Unidade unidadeAcademica = new Unidade();
 			
 			
 			String sql = "SELECT * FROM professor;";

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import areasUniversidade.Curso;
-import areasUniversidade.UnidadeAcademica;
+import areasUniversidade.Unidade;
 import pesquisa.Formulario;
 
 public class CursoDAO 
@@ -47,7 +47,7 @@ private Connection connection;
 		
 		try
 		{
-			UnidadeAcademicaDAO uniDAO = new UnidadeAcademicaDAO();
+			UnidadeDAO uniDAO = new UnidadeDAO();
 			Curso curso = new Curso();
 			
 			ArrayList<Curso> cursos = new ArrayList<Curso>();
@@ -63,7 +63,7 @@ private Connection connection;
 				curso.setSigla(resultado.getString("sigla"));
 				curso.setNome(resultado.getString("nome"));
 				
-				UnidadeAcademica unidade = uniDAO.buscaSigla(resultado.getString("unidadeAC"));
+				Unidade unidade = uniDAO.buscaSigla(resultado.getString("unidadeAC"));
 				
 				curso.setUnidade(unidade);
 				cursos.add(curso);
@@ -87,7 +87,7 @@ private Connection connection;
 		
 		try
 		{
-			UnidadeAcademicaDAO uniDAO = new UnidadeAcademicaDAO();
+			UnidadeDAO uniDAO = new UnidadeDAO();
 			Curso curso = new Curso();
 			
 			String sql = "SELECT * FROM curso WHERE sigla = ?;";
@@ -103,7 +103,7 @@ private Connection connection;
 				curso.setSigla(resultado.getString("sigla"));
 				curso.setNome(resultado.getString("nome"));
 				
-				UnidadeAcademica unidade = uniDAO.buscaSigla(resultado.getString("unidadeAC"));
+				Unidade unidade = uniDAO.buscaSigla(resultado.getString("unidadeAC"));
 				
 				curso.setUnidade(unidade);
 			}

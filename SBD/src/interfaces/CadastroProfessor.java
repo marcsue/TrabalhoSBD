@@ -11,13 +11,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import banco.CursoDAO;
-import areasUniversidade.Curso;
 import membrosUniversidade.Aluno;
+import areasUniversidade.Curso;
+import banco.CursoDAO;
 
-public class CadastroAluno extends JPanel implements ActionListener
-{
-	
+public class CadastroProfessor extends JPanel implements ActionListener{
 
 	public JLabel cpf; 
 	public JLabel nome;
@@ -43,8 +41,7 @@ public class CadastroAluno extends JPanel implements ActionListener
 	public JButton salvar;
 	public JButton voltar;
 	
-	public CadastroAluno () 
-	{
+	public CadastroProfessor () {
 		super();
 		this.setSize(1366, 768);		
 		this.setLayout(null);
@@ -148,7 +145,7 @@ public class CadastroAluno extends JPanel implements ActionListener
 		caixaMatricula.setBounds(110, 157, 150, 20);
 		caixaMatricula.setVisible(true);
 		this.add(caixaMatricula);
-		
+				
 		//BOTAO SALVAR
 		salvar = new JButton("SALVAR");
 		salvar.setBounds(180, 300, 100, 30);
@@ -165,22 +162,23 @@ public class CadastroAluno extends JPanel implements ActionListener
 		
 	}
 	
-	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
 		if(e.getSource().equals(salvar))
 		{
 			salvar();
 			Janela.getInstance().getSuperior().setVisible(true);
-			Janela.getInstance().getCadastrarAluno().setVisible(false);
+			Janela.getInstance().getCadastrarProfessor().setVisible(false);
 		}
 		if(e.getSource().equals(voltar))
 		{
-			Janela.getInstance().getCadastrarAluno().setVisible(false);
+			Janela.getInstance().getCadastrarProfessor().setVisible(false);
 			Janela.getInstance().getEscolhaPessoa().setVisible(true);
 		}
 		
 	}
+		
+	
 	
 	
 	
@@ -226,5 +224,3 @@ public class CadastroAluno extends JPanel implements ActionListener
 
 		
 }
-	
-

@@ -8,18 +8,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import areasUniversidade.Curso;
-import areasUniversidade.UnidadeAcademica;
+import areasUniversidade.Unidade;
 
-public class UnidadeAcademicaDAO 
+public class UnidadeDAO 
 {
 	private Connection connection;
 	
-	public UnidadeAcademicaDAO() throws ClassNotFoundException
+	public UnidadeDAO() throws ClassNotFoundException
 	{
 		this.connection = new ConnectionFactory().getConnection();
 	}
 	
-	public boolean insereUnidade(UnidadeAcademica unidadeAcademica)
+	public boolean insereUnidade(Unidade unidadeAcademica)
 	{
 		try
 		{
@@ -41,11 +41,11 @@ public class UnidadeAcademicaDAO
 		}
 	}
 	
-	public ArrayList<UnidadeAcademica> buscaTodas()
+	public ArrayList<Unidade> buscaTodas()
 	{
 		try
 		{
-			ArrayList<UnidadeAcademica> unidades = new ArrayList<UnidadeAcademica>();
+			ArrayList<Unidade> unidades = new ArrayList<Unidade>();
 			
 			String sql = "SELECT * FROM unidadeAcademica;";
 			PreparedStatement stmt  = connection.prepareStatement(sql);
@@ -54,7 +54,7 @@ public class UnidadeAcademicaDAO
 			
 			while(resultado.next())
 			{
-				UnidadeAcademica uni =  new UnidadeAcademica();
+				Unidade uni =  new Unidade();
 				
 				//o set é de unidade academica o objeto, e o get é do banco de dados o paramentro do get tem que ser igual o nome da coluna no Banco
 				uni.setSigla(resultado.getString("siglaUAC"));
@@ -76,12 +76,12 @@ public class UnidadeAcademicaDAO
 		}
 	}
 	
-	public UnidadeAcademica buscaSigla(String sigla) throws SQLException
+	public Unidade buscaSigla(String sigla) throws SQLException
 	{
 		
 		try
 		{
-			UnidadeAcademica unidadeAC = new UnidadeAcademica();
+			Unidade unidadeAC = new Unidade();
 			
 			String sql = "SELECT * FROM unidadeAcademica WHERE siglaUAC = ?;";
 			PreparedStatement stmt = connection.prepareStatement(sql);

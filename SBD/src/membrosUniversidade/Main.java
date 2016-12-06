@@ -5,16 +5,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import areasUniversidade.Curso;
-import areasUniversidade.UnidadeAcademica;
-import areasUniversidade.UnidadeAdministrativa;
+import areasUniversidade.Unidade;
+import areasUniversidade.Unidade;
 import banco.AlunoDAO;
 import banco.CursoDAO;
 import banco.FormularioDAO;
 import banco.ProfessorDAO;
 import banco.TerceirizadoDAO;
-import banco.UnidadeAcademicaDAO;
-import banco.UnidadeAdministrativaDAO;
+import banco.UnidadeDAO;
+import banco.UnidadeDAO;
 import interfaces.Janela;
+import interfaces.Superior;
 import pesquisa.Formulario;
 import pesquisa.Questao;
 import pesquisa.Resposta;
@@ -25,7 +26,6 @@ public class Main {
 	{
 		
 		Janela.getInstance();
-		
 		
 		/*TerceirizadoDAO forD = new TerceirizadoDAO();
 		

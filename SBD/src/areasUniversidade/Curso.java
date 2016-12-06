@@ -4,12 +4,12 @@ public class Curso
 {
 	private String sigla;
 	private String nome;
-	private UnidadeAcademica unidade;
+	private Unidade unidade;
 	
 	
 	public Curso (){}
 	
-	public Curso(String sigla, String nome, UnidadeAcademica unidade) {
+	public Curso(String sigla, String nome, Unidade unidade) {
 		super();
 		this.sigla = sigla;
 		this.nome = nome;
@@ -33,11 +33,11 @@ public class Curso
 		this.nome = nome;
 	}
 
-	public UnidadeAcademica getUnidade() {
+	public Unidade getUnidade() {
 		return unidade;
 	}
 
-	public void setUnidade(UnidadeAcademica unidade) {
+	public void setUnidade(Unidade unidade) {
 		this.unidade = unidade;
 	}
 	

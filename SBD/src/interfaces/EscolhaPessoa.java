@@ -17,6 +17,7 @@ public class EscolhaPessoa extends JPanel implements ActionListener {
 	public JButton tecnicos;
 	public JButton terceirizados;
 
+	public JButton voltar;
 		
 	public EscolhaPessoa () {
 		super();
@@ -50,7 +51,13 @@ public class EscolhaPessoa extends JPanel implements ActionListener {
 		terceirizados.setVisible(true);
 		this.add(terceirizados);
 		terceirizados.addActionListener(this);
-				
+			
+		//BOTAO VOLTAR
+		voltar = new JButton("VOLTAR");
+		voltar.setBounds(20, 300, 100, 30);
+		voltar.setVisible(true);
+		this.add(voltar);
+		voltar.addActionListener(this);
 		
 	}
 
@@ -61,19 +68,35 @@ public class EscolhaPessoa extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(aluno))
 		{
-			Janela.getInstance().getVerifica().setVisible(false);
-			Janela.getInstance().getCriaFormulario().setVisible(false);
-			Janela.getInstance().getResponderFormulario().setVisible(false);
 			Janela.getInstance().getCadastrarAluno().setVisible(true);
-			Janela.getInstance().getEscolhaPessoa().setVisible(false);
+			Janela.getInstance().getEscolhaPessoa().setVisible(false);	
 			
-			aluno.setVisible(false);
-			professor.setVisible(false);
-			tecnicos.setVisible(false);
-			terceirizados.setVisible(false);
+		}
+		else if (e.getSource().equals(professor))
+		{
+			Janela.getInstance().getCadastrarProfessor().setVisible(true);
+			Janela.getInstance().getEscolhaPessoa().setVisible(false);
+				
+		}
+		else if (e.getSource().equals(tecnicos))
+		{
+			Janela.getInstance().getCadastrarTecnico().setVisible(true);
+			Janela.getInstance().getEscolhaPessoa().setVisible(false);	
+			
+		}
+		else if (e.getSource().equals(terceirizados))
+		{
+			Janela.getInstance().getCadastrarTerceirizado().setVisible(true);
+			Janela.getInstance().getEscolhaPessoa().setVisible(false);
 			
 			
 		}
+		else if (e.getSource().equals(voltar))
+		{
+			Janela.getInstance().getVerifica().setVisible(true);
+			Janela.getInstance().getEscolhaPessoa().setVisible(false);
+		}
+		
 		
 	}
 

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import areasUniversidade.UnidadeAcademica;
+import areasUniversidade.Unidade;
 import pesquisa.Formulario;
 
 public class FormularioDAO 
