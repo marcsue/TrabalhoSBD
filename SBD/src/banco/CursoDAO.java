@@ -23,7 +23,7 @@ private Connection connection;
 	{
 		try
 		{
-			String sql = "INSERT INTO curso (sigla, nome, unidadeAC) VALUES(?,?,?);";
+			String sql = "INSERT INTO curso (sigla, nome, unidade_academica) VALUES(?,?,?);";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
 			stmt.setString(1,curso.getSigla());
