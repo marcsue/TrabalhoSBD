@@ -1,0 +1,94 @@
+2016-12-07 13:11:02,614 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: localProject:Desafio2:0.0.1-SNAPSHOT @ /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/pom.xml.
+2016-12-07 13:11:02,624 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: localProject:Desafio2:0.0.1-SNAPSHOT @ /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/pom.xml.
+2016-12-07 13:11:07,235 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:11:07,241 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:11:07,283 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2016-12-07 13:11:07,309 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: localProject:Desafio2:0.0.1-SNAPSHOT @ /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/pom.xml.
+2016-12-07 13:11:07,379 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:11:07,379 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:11:07,733 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: localProject:Desafio2:0.0.1-SNAPSHOT @ /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/pom.xml.
+2016-12-07 13:11:09,292 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:11:09,304 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:11:09,305 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2016-12-07 13:11:09,310 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:11:09,310 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:12:57,187 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:12:57,189 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:12:57,189 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:12:57,193 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:12:57,193 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:22:24,468 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:22:24,469 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:22:24,471 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-12-07 13:22:24,474 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:22:24,475 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:25:56,389 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:25:56,389 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:25:56,390 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-12-07 13:25:56,392 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:25:56,393 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:26:41,699 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:26:41,700 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:26:41,701 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-12-07 13:26:41,703 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:26:41,703 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:27:47,309 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:27:47,310 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:27:47,310 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:27:47,313 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:27:47,314 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:30:43,803 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:30:43,804 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:30:43,804 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:30:43,808 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:30:43,808 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:31:48,708 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:31:48,709 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:31:48,709 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:31:48,712 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:31:48,712 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:36:35,074 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:36:35,074 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:36:35,074 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:36:35,076 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:36:35,076 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:38:42,145 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:38:42,146 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:38:42,146 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:38:42,149 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:38:42,149 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:38:53,050 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:38:53,050 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:38:53,050 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:38:53,052 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:38:53,052 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:39:12,614 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:39:12,615 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:39:12,616 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:39:12,619 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:39:12,620 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:39:52,652 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:39:52,652 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:39:52,652 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:39:52,654 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:39:52,655 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:39:58,874 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:39:58,874 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:39:58,875 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:39:58,880 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:39:58,880 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:40:24,755 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:40:24,755 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:40:24,755 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:40:24,758 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:40:24,759 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:43:40,238 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:43:40,239 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:43:40,239 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:43:40,241 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:43:40,241 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
+2016-12-07 13:43:47,934 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:43:47,934 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-12-07 13:43:47,934 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-12-07 13:43:47,936 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-12-07 13:43:47,936 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2/src/test/resources
