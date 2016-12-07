@@ -22,20 +22,18 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 	public JLabel emailSecundario;
 	public JLabel dtaNasc;
 	public JLabel matricula;
-	public JLabel siglaCurso;//label p/ o combo
-	
+	public JLabel siglaCurso;
 	
 	public JTextField caixaCpf;
 	public JTextField caixaNome;
 	public JTextField caixaEmailInstitucional;
 	public JTextField caixaEmailSecundario;
-	public JTextField caixaDia;//dta de nascimento
+	public JTextField caixaDia;
 	public JTextField caixaMes;
 	public JTextField caixaAno;
 	public JTextField caixaMatricula;
-	//public JTextField caixaSiglaCurso;
-
-	public JComboBox comboSiglaCurso;//combo p/ o label
+	
+	public JComboBox comboSiglaCurso;
 	
 	public JButton salvar;
 	public JButton voltar;
@@ -120,7 +118,7 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 		caixaEmailSecundario.setVisible(true);
 		this.add(caixaEmailSecundario);
 		
-		//DTA DE NASCIMENTO
+		//DATA DE NASCIMENTO
 		//CAIXA DIA
 		caixaDia = new JTextField("D");
 		caixaDia.setBounds(186, 127, 20, 20);
@@ -144,13 +142,7 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 		caixaMatricula.setBounds(110, 157, 150, 20);
 		caixaMatricula.setVisible(true);
 		this.add(caixaMatricula);
-		
-		//CAIXA SIGLA CURSO
-		/*caixaSiglaCurso = new JTextField();
-		caixaSiglaCurso.setBounds(100, 187, 150, 20);
-		caixaSiglaCurso.setVisible(true);
-		this.add(caixaSiglaCurso);*/
-				
+						
 		//BOTAO SALVAR
 		salvar = new JButton("SALVAR");
 		salvar.setBounds(180, 300, 100, 30);

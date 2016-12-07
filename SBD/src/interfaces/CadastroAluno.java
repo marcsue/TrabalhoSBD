@@ -18,27 +18,25 @@ import membrosUniversidade.Aluno;
 public class CadastroAluno extends JPanel implements ActionListener
 {
 	
-
 	public JLabel cpf; 
 	public JLabel nome;
 	public JLabel emailInstitucional;
 	public JLabel emailSecundario;
 	public JLabel dtaNasc;
 	public JLabel matricula;
-	public JLabel siglaCurso;//label p/ o combo
-	
+	public JLabel siglaCurso;
 	
 	public JTextField caixaCpf;
 	public JTextField caixaNome;
 	public JTextField caixaEmailInstitucional;
 	public JTextField caixaEmailSecundario;
-	public JTextField caixaDia;//dta de nascimento
+	public JTextField caixaDia;
 	public JTextField caixaMes;
 	public JTextField caixaAno;
 	public JTextField caixaMatricula;
-	//public JTextField caixaSiglaCurso;
+	//
 
-	public JComboBox comboSiglaCurso;//combo p/ o label
+	public JComboBox comboSiglaCurso;
 	
 	public JButton salvar;
 	public JButton voltar;
@@ -95,8 +93,7 @@ public class CadastroAluno extends JPanel implements ActionListener
 		comboSiglaCurso = new JComboBox();
 		comboSiglaCurso.setBounds(150, 186, 200, 20);
 		comboSiglaCurso.setVisible(true);
-		comboSiglaCurso.addItem("BCC");
-		comboSiglaCurso.addItem("BSI");
+		comboSiglaCurso.addItem("");
 		this.add(comboSiglaCurso);
 		comboSiglaCurso.addActionListener(this);
 		
@@ -163,6 +160,25 @@ public class CadastroAluno extends JPanel implements ActionListener
 		this.add(voltar);
 		voltar.addActionListener(this);
 		
+	/*	public void atualizacombo()
+		{
+			//tem que criar lista de alunos Array lits blablba
+			  
+			comboAluno.removeAllItems();
+			listaAlunos = alunoBanco.selecionarTodos();
+			int tamanhoBD = listaAlunos.size()-1;
+			Aluno aluno = new Aluno();
+			comboAluno.addItem("");
+			while (tamanhoBD>=0)
+			{
+				aluno = listaAlunos.get(tamanhoBD);
+				comboAluno.addItem(aluno.getNome());
+				
+				tamanhoBD--;
+			}
+		}*/
+		
+		
 	}
 	
 	@Override
@@ -171,6 +187,7 @@ public class CadastroAluno extends JPanel implements ActionListener
 		if(e.getSource().equals(salvar))
 		{
 			salvar();
+			
 			Janela.getInstance().getSuperior().setVisible(true);
 			Janela.getInstance().getCadastrarAluno().setVisible(false);
 		}
@@ -178,10 +195,8 @@ public class CadastroAluno extends JPanel implements ActionListener
 		{
 			Janela.getInstance().getCadastrarAluno().setVisible(false);
 			Janela.getInstance().getEscolhaPessoa().setVisible(true);
-		}
-		
+		}	
 	}
-	
 	
 	
 	public void salvar()
@@ -192,7 +207,7 @@ public class CadastroAluno extends JPanel implements ActionListener
 			Aluno aluno = new Aluno();
 			Curso curso;
 			Date data = new Date (Integer.parseInt(caixaAno.getText())-1900,Integer.parseInt(caixaMes.getText()) -1 , 
-					  Integer.parseInt(caixaDia.getText()));
+								  Integer.parseInt(caixaDia.getText()));
 	
 			
 			curso = new CursoDAO().buscaSigla(comboSiglaCurso.getSelectedItem().toString());

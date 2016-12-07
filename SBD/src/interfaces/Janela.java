@@ -21,12 +21,11 @@ public class Janela extends JFrame
 	
 	
 	
-	
 	private static Janela instance;
 	
 	public Janela()
 	{
-		super("FINAL"); // nome na barra superior
+		super("SBD"); // nome na barra superior
 		this.setSize(1366, 768);//definindo tamanho da janela
 		
 		this.setLayout(null);//para o ultimo painel n ficar em full screen

@@ -6,7 +6,6 @@ public class Curso
 	private String nome;
 	private Unidade unidade;
 	
-	
 	public Curso (){}
 	
 	public Curso(String sigla, String nome, Unidade unidade) {
