@@ -2,13 +2,15 @@ package pesquisa;
 
 public class Resposta 
 {
-	private Integer id;
-	private String descricao;
+	private Integer id; //Idformulario
+	
+	private String cpf_pessoa;
 
 	public Resposta(){}
 	
-	public Resposta( String descricao ) {
-		this.descricao = descricao;
+	public Resposta(int id ,String cpf) {
+		this.id = id;
+		this.cpf_pessoa = cpf;
 	}
 
 	public Integer getId() {
@@ -19,12 +21,13 @@ public class Resposta
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
+
+	public String getCpfp() {
+		return cpf_pessoa;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setCpfp(String cpf_pessoa) {
+		this.cpf_pessoa = cpf_pessoa;
 	}
 	
 	

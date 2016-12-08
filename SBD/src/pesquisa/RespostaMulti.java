@@ -1,13 +1,15 @@
 package pesquisa;
 
+import java.util.ArrayList;
+
 public class RespostaMulti extends Resposta 
 {
 	//0 false / 1 true / -1 abstencao
-	private Integer resp;
-
-	public RespostaMulti( String descricao, Integer resp)  {
-		super(descricao);
-		this.resp = resp;
+	private int resp_id;
+	
+	public RespostaMulti(int id, int resp,String cpf)  {
+		super(id,cpf);
+		this.resp_id = resp;
 	}
 	
 	public RespostaMulti() {
@@ -15,11 +17,11 @@ public class RespostaMulti extends Resposta
 	}
 
 	public Integer getResp() {
-		return resp;
+		return resp_id;
 	}
 
 	public void setResp(Integer resp) {
-		this.resp = resp;
+		this.resp_id = resp;
 	}
 	
 	

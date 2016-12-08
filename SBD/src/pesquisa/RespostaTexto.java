@@ -4,8 +4,8 @@ public class RespostaTexto extends Resposta
 {
 	private String resp;
 
-	public RespostaTexto (String descricao, String resp)  {
-		super( descricao);
+	public RespostaTexto (int id,String resp,String cpf)  {
+		super(id,cpf);
 		this.resp = resp;
 	}
 	

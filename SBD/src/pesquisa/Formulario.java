@@ -7,10 +7,24 @@ public class Formulario
 	private Integer id;
 	private Date data_fim;
 	private Date data_inicio;
+	private String cpf;
+	private String titulo;
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
 	private boolean aluno;
 	private boolean professor;
 	private boolean terceirizado;
-	
 	public Date getData_fim() {
 		return data_fim;
 	}
@@ -77,7 +91,7 @@ public class Formulario
 			return false;
 		}
 	}	
-	public boolean removeResposta(Questao questao)
+	public boolean removeResposta(Questao questao) //Corrigir
 	{
 		try
 		{
