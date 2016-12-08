@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS pessoa (
   nome VARCHAR(100),
   data_nascimento DATE,
   emaili VARCHAR(100),
-  emails VARCHAR(100),
+  emails VARCHAR(100) NULL,
   tipo_pessoa VARCHAR(45),
   CONSTRAINT pk_pessoa PRIMARY KEY (cpf)
 );
