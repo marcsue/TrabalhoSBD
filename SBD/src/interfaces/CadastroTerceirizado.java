@@ -49,7 +49,7 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 		
 
 		//LABEL TITULO
-		titulo = new JLabel("CADASTRO DE ALUNO");
+		titulo = new JLabel("CADASTRO DE TERCEIRIZADO");
 		titulo.setBounds(20, 1, 200, 30);
 		titulo.setVisible(true);
 		this.add(titulo);

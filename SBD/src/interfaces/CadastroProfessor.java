@@ -23,9 +23,9 @@ public class CadastroProfessor extends JPanel implements ActionListener{
 	public JLabel emailInstitucional;
 	public JLabel emailSecundario;
 	public JLabel dtaNasc;
-	public JLabel matricula;
-	public JLabel siglaCurso;//label p/ o combo
-	
+	public JLabel siape;
+	public JLabel regimeTrabalho;//label p/ o combo
+	public JLabel unidadeTrabalho;//label p/ o combo
 	
 	public JTextField caixaCpf;
 	public JTextField caixaNome;
@@ -34,10 +34,13 @@ public class CadastroProfessor extends JPanel implements ActionListener{
 	public JTextField caixaDia;//dta de nascimento
 	public JTextField caixaMes;
 	public JTextField caixaAno;
-	public JTextField caixaMatricula;
+	public JTextField caixasiape;
+	
+	
 	//public JTextField caixaSiglaCurso;
 
-	public JComboBox comboSiglaCurso;//combo p/ o label
+	public JComboBox comboRegimeTrab;//combo p/ o label
+	public JComboBox comboUnidadeTrab;//combo p/ o label
 	
 	public JButton salvar;
 	public JButton voltar;
@@ -49,7 +52,7 @@ public class CadastroProfessor extends JPanel implements ActionListener{
 		
 
 		//LABEL TITULO
-		titulo = new JLabel("CADASTRO DE ALUNO");
+		titulo = new JLabel("CADASTRO DE PROFESSOR");
 		titulo.setBounds(20, 1, 200, 30);
 		titulo.setVisible(true);
 		this.add(titulo);
@@ -84,25 +87,39 @@ public class CadastroProfessor extends JPanel implements ActionListener{
 		dtaNasc.setVisible(true);
 		this.add(dtaNasc);
 		
-		//LABEL MATRICULA
-		matricula = new JLabel("MATRICULA:");
-		matricula.setBounds(20, 180, 200, 30);
-		matricula.setVisible(true);
-		this.add(matricula);
+		//LABEL SIAPE
+		siape = new JLabel("SIAPE:");
+		siape.setBounds(20, 180, 200, 30);
+		siape.setVisible(true);
+		this.add(siape);
 		
-		//LABEL SIGLA CURSO
-		siglaCurso = new JLabel("SIGLA DO CURSO:");
-		siglaCurso.setBounds(20, 210, 200, 30);
-		siglaCurso.setVisible(true);
-		this.add(siglaCurso);
-	
-		//COMBO SIGLA CURSO
-		comboSiglaCurso = new JComboBox();
-		comboSiglaCurso.setBounds(150, 216, 200, 20);
-		comboSiglaCurso.setVisible(true);
-		comboSiglaCurso.addItem("");
-		this.add(comboSiglaCurso);
-		comboSiglaCurso.addActionListener(this);
+		//LABEL REGIME DE TRABALHO
+		regimeTrabalho = new JLabel("REGIME DE TRABALHO:");
+		regimeTrabalho.setBounds(20, 240, 200, 30);
+		regimeTrabalho.setVisible(true);
+		this.add(regimeTrabalho);
+		
+		//COMBO REGIME DE TRABALHO
+		comboRegimeTrab = new JComboBox();
+		comboRegimeTrab.setBounds(182, 246, 200, 20);
+		comboRegimeTrab.setVisible(true);
+		comboRegimeTrab.addItem("");
+		this.add(comboRegimeTrab);
+		comboRegimeTrab.addActionListener(this);
+		
+		//LABEL UNIDADE DE TRABALHO
+		unidadeTrabalho = new JLabel("UNIDADE DE TRABALHO:");
+		unidadeTrabalho.setBounds(20, 210, 200, 30);
+		unidadeTrabalho.setVisible(true);
+		this.add(unidadeTrabalho);
+				
+		//COMBO UNIDADE DE TRABALHO
+		comboUnidadeTrab = new JComboBox();
+		comboUnidadeTrab.setBounds(195, 216, 200, 20);
+		comboUnidadeTrab.setVisible(true);
+		comboUnidadeTrab.addItem("");
+		this.add(comboUnidadeTrab);
+		comboUnidadeTrab.addActionListener(this);
 		
 		//CAIXA CPF
 		caixaCpf = new JTextField();
@@ -147,11 +164,11 @@ public class CadastroProfessor extends JPanel implements ActionListener{
 		caixaAno.setVisible(true);
 		this.add(caixaAno);
 		
-		//CAIXA MATRICULA
-		caixaMatricula = new JTextField();
-		caixaMatricula.setBounds(110, 187, 150, 20);
-		caixaMatricula.setVisible(true);
-		this.add(caixaMatricula);
+		//CAIXA SIAPE
+		caixasiape = new JTextField();
+		caixasiape.setBounds(73, 187, 150, 20);
+		caixasiape.setVisible(true);
+		this.add(caixasiape);
 		
 		//BOTAO SALVAR
 		salvar = new JButton("SALVAR");
@@ -188,11 +205,14 @@ public class CadastroProfessor extends JPanel implements ActionListener{
 		
 	}
 	
+	
+	
+	
 	public void actionPerformed(ActionEvent e) 
 	{
 		if(e.getSource().equals(salvar))
 		{
-			salvar();
+//			salvar();
 			Janela.getInstance().getSuperior().setVisible(true);
 			Janela.getInstance().getCadastrarProfessor().setVisible(false);
 		}
@@ -208,7 +228,7 @@ public class CadastroProfessor extends JPanel implements ActionListener{
 	
 	
 	
-	public void salvar()
+/*	public void salvar()
 	{
 		//falta inserir no banco e arrumar o curso
 		try 
@@ -219,14 +239,14 @@ public class CadastroProfessor extends JPanel implements ActionListener{
 					  Integer.parseInt(caixaDia.getText()));
 	
 			
-			curso = new CursoDAO().buscaSigla(comboSiglaCurso.getSelectedItem().toString());
+		//	curso = new CursoDAO().buscaSigla(comboSiglaCurso.getSelectedItem().toString());
 			
 			
 			aluno.setCpf(caixaCpf.getText());
 			aluno.setNome(caixaNome.getText());
 			aluno.setEmailInstitucional(caixaEmailInstitucional.getText());
 			aluno.setEmailSecundario(caixaEmailSecundario.getText());
-			aluno.setMatricula(caixaMatricula.getText());		
+	    //  aluno.setMatricula(caixaMatricula.getText());		
 			aluno.setNascimento(data);
 		//	aluno.setCurso(curso);
 			
@@ -246,7 +266,7 @@ public class CadastroProfessor extends JPanel implements ActionListener{
 			e1.printStackTrace();
 		}
 		
-	}
+	}*/
 
 		
 }

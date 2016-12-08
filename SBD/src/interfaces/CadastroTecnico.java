@@ -23,8 +23,8 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 	public JLabel emailInstitucional;
 	public JLabel emailSecundario;
 	public JLabel dtaNasc;
-	public JLabel matricula;
-	public JLabel siglaCurso;
+	public JLabel siape;
+	public JLabel unidadeTrabalho;
 	
 	public JTextField caixaCpf;
 	public JTextField caixaNome;
@@ -33,9 +33,9 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 	public JTextField caixaDia;
 	public JTextField caixaMes;
 	public JTextField caixaAno;
-	public JTextField caixaMatricula;
+	public JTextField caixasiape;
 	
-	public JComboBox comboSiglaCurso;
+	public JComboBox comboUnidadeTrab;
 	
 	public JButton salvar;
 	public JButton voltar;
@@ -47,7 +47,7 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 		
 
 		//LABEL TITULO
-		titulo = new JLabel("CADASTRO DE ALUNO");
+		titulo = new JLabel("CADASTRO DE TÉCNICO");
 		titulo.setBounds(20, 1, 200, 30);
 		titulo.setVisible(true);
 		this.add(titulo);
@@ -82,25 +82,25 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 		dtaNasc.setVisible(true);
 		this.add(dtaNasc);
 		
-		//LABEL MATRICULA
-		matricula = new JLabel("MATRICULA:");
-		matricula.setBounds(20, 180, 200, 30);
-		matricula.setVisible(true);
-		this.add(matricula);
+		//LABEL SIAPE
+		siape = new JLabel("SIAPE:");
+		siape.setBounds(20, 180, 200, 30);
+		siape.setVisible(true);
+		this.add(siape);
 		
-		//LABEL SIGLA CURSO
-		siglaCurso = new JLabel("SIGLA DO CURSO:");
-		siglaCurso.setBounds(20, 210, 200, 30);
-		siglaCurso.setVisible(true);
-		this.add(siglaCurso);
-	
-		//COMBO SIGLA CURSO
-		comboSiglaCurso = new JComboBox();
-		comboSiglaCurso.setBounds(150, 216, 200, 20);
-		comboSiglaCurso.setVisible(true);
-		comboSiglaCurso.addItem("");
-		this.add(comboSiglaCurso);
-		comboSiglaCurso.addActionListener(this);
+		//LABEL UNIDADE DE TRABALHO
+		unidadeTrabalho = new JLabel("UNIDADE DE TRABALHO:");
+		unidadeTrabalho.setBounds(20, 210, 200, 30);
+		unidadeTrabalho.setVisible(true);
+		this.add(unidadeTrabalho);
+		
+		//COMBO UNIDADE DE TRABALHO
+		comboUnidadeTrab = new JComboBox();
+		comboUnidadeTrab.setBounds(195, 216, 200, 20);
+		comboUnidadeTrab.setVisible(true);
+		comboUnidadeTrab.addItem("");
+		this.add(comboUnidadeTrab);
+		comboUnidadeTrab.addActionListener(this);
 		
 		//CAIXA CPF
 		caixaCpf = new JTextField();
@@ -145,11 +145,11 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 		caixaAno.setVisible(true);
 		this.add(caixaAno);
 		
-		//CAIXA MATRICULA
-		caixaMatricula = new JTextField();
-		caixaMatricula.setBounds(110, 187, 150, 20);
-		caixaMatricula.setVisible(true);
-		this.add(caixaMatricula);
+		//CAIXA SIAPE
+		caixasiape = new JTextField();
+		caixasiape.setBounds(73, 187, 150, 20);
+		caixasiape.setVisible(true);
+		this.add(caixasiape);
 		
 		//BOTAO SALVAR
 		salvar = new JButton("SALVAR");
@@ -189,7 +189,7 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 	{
 		if(e.getSource().equals(salvar))
 		{
-			salvar();
+//			salvar();
 			Janela.getInstance().getSuperior().setVisible(true);
 			Janela.getInstance().getCadastrarTecnico().setVisible(false);
 		}
@@ -202,7 +202,7 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 	}
 	
 	
-	public void salvar()
+/*	public void salvar()
 	{
 		//falta inserir no banco e arrumar o curso
 		try 
@@ -242,5 +242,5 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 		
 	}
 
-		
+		*/
 }
