@@ -49,7 +49,9 @@ private Connection connection;
 		{
 			UnidadeDAO uniDAO = new UnidadeDAO();
 			
+			
 			ArrayList<Curso> cursos = new ArrayList<Curso>();
+			
 			
 			String sql = "SELECT * FROM curso;";
 			PreparedStatement stmt = connection.prepareStatement(sql);

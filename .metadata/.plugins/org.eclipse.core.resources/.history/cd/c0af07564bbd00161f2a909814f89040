@@ -32,9 +32,9 @@ public class Main {
 		CursoDAO unidao = new CursoDAO ();
 		
 		
-//		Date data = new Date(1991-1900,02,12);
+		Date data = new Date(1990-1900,02,12);
 		
-		//System.out.println(data);
+		System.out.println(data);
 		
 		
 		ArrayList<Curso> cadastrados = new ArrayList<Curso>();
@@ -44,10 +44,10 @@ public class Main {
 		//System.out.println(forD.buscaSigla("facom").getNome());
 		
 	//	System.out.println(cadastrados);
-	
+		/*
 		for(int i=0;i!=cadastrados.size();i++)
 			System.out.println(cadastrados.get(i).getNome()+" "+cadastrados.get(i).getSigla()+" "+cadastrados.get(i).getUnidade().getSigla());
-		
+		*/
 		
 		
 	}

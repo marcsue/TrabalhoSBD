@@ -48,6 +48,7 @@ private Connection connection;
 		try
 		{
 			UnidadeDAO uniDAO = new UnidadeDAO();
+			Curso curso = new Curso();
 			
 			ArrayList<Curso> cursos = new ArrayList<Curso>();
 			
@@ -58,17 +59,21 @@ private Connection connection;
 			
 			while(resultado.next())
 			{
-				Curso curso = new Curso();
 				
 				curso.setSigla(resultado.getString("sigla"));
 				curso.setNome(resultado.getString("nome"));
 				
 				Unidade unidade = uniDAO.buscaSigla(resultado.getString("unidade_academica"));
+				
 				curso.setUnidade(unidade);
+				
 				
 				cursos.add(curso);
 				
 			}
+			
+			System.out.println(cursos.get(1).getNome());
+			System.out.println(cursos.get(2).getNome());
 			
 			stmt.close();
 			

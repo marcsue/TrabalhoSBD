@@ -38,7 +38,7 @@ public class UnidadeDAO
 				//o set é de unidade academica o objeto, e o get é do banco de dados o paramentro do get tem que ser igual o nome da coluna no Banco
 				uni.setSigla(resultado.getString("sigla"));
 				uni.setNome(resultado.getString("nome"));
-				uni.setTipo(resultado.getInt("tipo_unidade"));
+				uni.setTipo(resultado.getInt("tipo"));
 				
 				unidades.add(uni);
 			}
@@ -73,7 +73,7 @@ public class UnidadeDAO
 			{
 				unidadeAC.setSigla(resultado.getString("sigla"));
 				unidadeAC.setNome(resultado.getString("nome"));
-				unidadeAC.setTipo(resultado.getInt("tipo_unidade"));
+				unidadeAC.setTipo(resultado.getInt("tipo"));
 			}
 			stmt.close();
 			

@@ -49,8 +49,10 @@ private Connection connection;
 		{
 			UnidadeDAO uniDAO = new UnidadeDAO();
 			
+			
 			ArrayList<Curso> cursos = new ArrayList<Curso>();
 			
+			cursos = null;
 			String sql = "SELECT * FROM curso;";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
@@ -64,7 +66,9 @@ private Connection connection;
 				curso.setNome(resultado.getString("nome"));
 				
 				Unidade unidade = uniDAO.buscaSigla(resultado.getString("unidade_academica"));
+				
 				curso.setUnidade(unidade);
+				
 				
 				cursos.add(curso);
 				
