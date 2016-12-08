@@ -13,6 +13,12 @@ public class Unidade
 		this.tipo = tipo;
 	}
 	
+	public Unidade(String sigla, String nome, int tipo) {
+		this.sigla = sigla;
+		this.nome = nome;
+		this.tipo = tipo;
+	}
+
 	public Unidade() {}
 
 	public String getSigla() {

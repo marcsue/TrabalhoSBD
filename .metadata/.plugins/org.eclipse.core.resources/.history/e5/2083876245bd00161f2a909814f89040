@@ -26,7 +26,7 @@ public class UnidadeDAO
 		{
 			ArrayList<Unidade> unidades = new ArrayList<Unidade>();
 			
-			String sql = "SELECT * FROM unidade;";
+			String sql = "SELECT * FROM unidadeAcademica;";
 			PreparedStatement stmt  = connection.prepareStatement(sql);
 			
 			ResultSet resultado = stmt.executeQuery();
@@ -38,6 +38,7 @@ public class UnidadeDAO
 				//o set é de unidade academica o objeto, e o get é do banco de dados o paramentro do get tem que ser igual o nome da coluna no Banco
 				uni.setSigla(resultado.getString("siglaUAC"));
 				uni.setNome(resultado.getString("nome"));
+				uni.setAreaConhecimento(resultado.getString("areaConhecimento"));
 				uni.setTipo(resultado.getInt("tipo"));
 				
 				unidades.add(uni);
@@ -62,7 +63,7 @@ public class UnidadeDAO
 		{
 			Unidade unidadeAC = new Unidade();
 			
-			String sql = "SELECT * FROM unidade WHERE siglaUAC = ?;";
+			String sql = "SELECT * FROM unidadeAcademica WHERE siglaUAC = ?;";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
 			stmt.setString(1,sigla);
@@ -71,8 +72,10 @@ public class UnidadeDAO
 			
 			while(resultado.next())
 			{
+				
 				unidadeAC.setSigla(resultado.getString("siglaUAC"));
 				unidadeAC.setNome(resultado.getString("nome"));
+				unidadeAC.setAreaConhecimento(resultado.getString("areaConhecimento"));
 				unidadeAC.setTipo(resultado.getInt("tipo"));
 			}
 			stmt.close();
@@ -84,5 +87,6 @@ public class UnidadeDAO
 			return null;
 		}
 	}
+	
 	
 }

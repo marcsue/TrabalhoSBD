@@ -25,14 +25,28 @@ public class Main {
 	public static void main (String[] args) throws ClassNotFoundException, SQLException
 	{
 		
-		//Janela.getInstance();
+		Janela.getInstance();
 		
-		Unidade uni = new Unidade();
+		/*TerceirizadoDAO forD = new TerceirizadoDAO();
 		
-		UnidadeDAO unidao = new UnidadeDAO ();
+		Date nascimentoj = new Date(1901, 0, 1);
+		
+		UnidadeAdministrativaDAO unidao= new UnidadeAdministrativaDAO();
+		UnidadeAdministrativa unida = new UnidadeAdministrativa("progr", "pro grad ");
+		//Curso comp = new Curso("bcc","comp", facom);
 		
 		
-		ArrayList<Unidade> cadastrados = new ArrayList<Unidade>();
+		unidao.insereUnidadeAdm(unida);
+		
+		
+		//Aluno aluno1= new Aluno("222", "jose", "jose2", "jose3", nascimento, "11411", comp);
+	//	Aluno aluno2= new Aluno("233", "jao", "jose2", "jose3", nascimentoj, "11411BCC", comp);
+		
+		Terceirizado prof = new Terceirizado("233", "jao", "jose2", "jose3", nascimentoj, "mm","adm");
+		
+		//boolean flag = forD.insereTerceirizado(prof);
+		
+		ArrayList<UnidadeAdministrativa> cadastrados = new ArrayList<UnidadeAdministrativa>();
 		cadastrados = unidao.buscaTodas();
 		
 		//System.out.println(forD.buscaSigla("facom").getNome());
@@ -41,7 +55,7 @@ public class Main {
 		
 		for(int i=0;i!=cadastrados.size();i++)
 			System.out.println(cadastrados.get(i).getNome()+" "+cadastrados.get(i).getSigla());
-		
+		*/
 		
 		
 	}

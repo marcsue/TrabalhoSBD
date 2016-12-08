@@ -101,7 +101,11 @@ CREATE TABLE IF NOT EXISTS mult (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS unidade (
   sigla CHAR(5) NOT NULL,
+<<<<<<< HEAD
   nome VARCHAR(100) ,  
+=======
+  nome VARCHAR(100) ,
+>>>>>>> 40aa9af28b8442431ae747b11b1872b244c6ef7d
   areaconhecimento VARCHAR(100),
   tipo_unidade INT NOT NULL,
   CONSTRAINT uni_pk PRIMARY KEY (sigla)

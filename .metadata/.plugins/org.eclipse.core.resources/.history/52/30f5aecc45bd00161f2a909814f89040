@@ -29,7 +29,7 @@ public class Main {
 		
 		Unidade uni = new Unidade();
 		
-		UnidadeDAO unidao = new UnidadeDAO ();
+		UnidadeDAO uni = new UnidadeDAO ();
 		
 		
 		ArrayList<Unidade> cadastrados = new ArrayList<Unidade>();
@@ -41,7 +41,7 @@ public class Main {
 		
 		for(int i=0;i!=cadastrados.size();i++)
 			System.out.println(cadastrados.get(i).getNome()+" "+cadastrados.get(i).getSigla());
-		
+		*/
 		
 		
 	}

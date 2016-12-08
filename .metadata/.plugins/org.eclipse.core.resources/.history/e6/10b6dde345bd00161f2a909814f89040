@@ -26,7 +26,7 @@ public class UnidadeDAO
 		{
 			ArrayList<Unidade> unidades = new ArrayList<Unidade>();
 			
-			String sql = "SELECT * FROM unidade;";
+			String sql = "SELECT * FROM unidadeAcademica;";
 			PreparedStatement stmt  = connection.prepareStatement(sql);
 			
 			ResultSet resultado = stmt.executeQuery();
@@ -62,7 +62,7 @@ public class UnidadeDAO
 		{
 			Unidade unidadeAC = new Unidade();
 			
-			String sql = "SELECT * FROM unidade WHERE siglaUAC = ?;";
+			String sql = "SELECT * FROM unidadeAcademica WHERE siglaUAC = ?;";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
 			stmt.setString(1,sigla);
