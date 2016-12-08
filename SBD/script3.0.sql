@@ -10,7 +10,7 @@
 -- Schema mydb
 -- -----------------------------------------------------
 --DROP SCHEMA public CASCADE
-
+--CREATE SCHEMA public
 -- -----------------------------------------------------
 -- Table `mydb`.`pessoa`
 -- -----------------------------------------------------
@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS pessoa (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS formulario (
   id SERIAL NOT NULL,
+  titulo VARCHAR(100) NOT NULL,
   cpf_criador VARCHAR(11) NOT NULL,
   tipo_restricao INT,
   data_inicial DATE,

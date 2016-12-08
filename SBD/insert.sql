@@ -1,4 +1,4 @@
--- UNIDADE
+﻿-- UNIDADE
 INSERT INTO unidade VALUES('FACOM', 'Facul. de Comp.','Exatas',1);
 INSERT INTO unidade VALUES('FAMAT', 'Facul. de Matem.','Exatas',1);
 INSERT INTO unidade VALUES('PROGR', 'Pro Reitoria de Graducao','',2);
@@ -11,7 +11,6 @@ INSERT INTO curso VALUES('LMA','Lincenciatura em Matematica','FAMAT');
 INSERT INTO curso VALUES('BEE','Bacha. em Eng. Eletrica','FEELT');
 INSERT INTO curso VALUES('BEM','Bacha. em Eng. Mecanica','FEELT');
 INSERT INTO curso VALUES('BSI','Bacha. em Sistema da Inf.','FACOM');
-
 
 
 --ALUNOS
