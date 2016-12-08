@@ -1,0 +1,8 @@
+Na parte de generalização de pessoas, optamos pela 8A, o motivo é que as consultas vão se concentrar em uma 
+subclasse de cada vez e também por existirem poucas subclasses.
+
+Nas agregações optamos por utilizar o tipo 1, pois nossa agregação não contava com nenhum atributo que o identifica
+ficando assim dependende das chaves de quem fazer parte da agregação. E também por resultar em mais de uma entidade
+agregada. (temos várias questões de texto por exemplo).
+
+
