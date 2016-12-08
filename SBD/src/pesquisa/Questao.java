@@ -5,13 +5,12 @@ import java.util.ArrayList;
 public class Questao
 {
 	private Integer id;
-	private String descricao;
+	private String pergunta;
 	private static ArrayList<Resposta> respostas = new ArrayList<>();
 	
-	public Questao(Integer id, String descricao) {
-		super();
+	public Questao(Integer id, String pergunta) {
 		this.id = id;
-		this.descricao = descricao;
+		this.pergunta = pergunta;
 	}
 
 	public Integer getId() {
@@ -23,11 +22,11 @@ public class Questao
 	}
 
 	public String getDescricao() {
-		return descricao;
+		return pergunta;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescricao(String pergunta) {
+		this.pergunta = pergunta;
 	}
 	
 	public boolean addResposta(Resposta reposta)

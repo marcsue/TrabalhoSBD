@@ -48,11 +48,11 @@ INSERT INTO pessoa VALUES(11345678901,'Andre','1991-04-13','andre@gmail.com','an
 INSERT INTO pessoa VALUES(11445678901,'Amanda','1992-08-19','amanda@gmail.com','amanda@hotmail.com','tecnico');
 INSERT INTO pessoa VALUES(11545678901,'Ana','1923-02-11','ana@gmail.com','ana@hotmail.com','tecnico');
 
-INSERT INTO professor VALUES (11145678901,'11211','FACOM');
-INSERT INTO professor VALUES (11245678901,'11231','FACOM');
-INSERT INTO professor VALUES (11345678901,'11341','FAMAT');
-INSERT INTO professor VALUES (11445678901,'11451','FACOM');
-INSERT INTO professor VALUES (11545678901,'11561','FAMAT');
+INSERT INTO tecnico VALUES (11145678901,'11211','FACOM');
+INSERT INTO tecnico VALUES (11245678901,'11231','FACOM');
+INSERT INTO tecnico VALUES (11345678901,'11341','FAMAT');
+INSERT INTO tecnico VALUES (11445678901,'11451','FACOM');
+INSERT INTO tecnico VALUES (11545678901,'11561','FAMAT');
 
 
 --TERCEIRIZADOS
@@ -67,5 +67,62 @@ INSERT INTO terceirizado VALUES (11745678901,'LimpeBem','limpeza');
 INSERT INTO terceirizado VALUES (11845678901,'TudoSeguro','seguranca');
 INSERT INTO terceirizado VALUES (11945678901,'LimpeBem','limpeza');
 INSERT INTO terceirizado VALUES (11045678901,'TudoSeguro','seguranca');
+
+
+--FORMULARIO
+INSERT INTO formulario VALUES (DEFAULT,'Universidade',12345678901,1,'2016-12-10','2016-12-31');
+INSERT INTO formulario VALUES (DEFAULT,'Brasil',11645678901,4,'2016-12-8','2016-12-30');
+INSERT INTO formulario VALUES (DEFAULT,'FORM 3',11145678901,3,'2016-11-5','2017-5-30');
+INSERT INTO formulario VALUES (DEFAULT,'FORM 4',62345678901,2,'2016-10-18','2016-12-30');
+INSERT INTO formulario VALUES (DEFAULT,'FORM 5',11945678901,4,'2016-11-28','2016-12-10');
+
+--Questao de TEXTO
+INSERT INTO texto VALUES (DEFAULT,'1','Qual a sua opiniao sobre a PEC 241');
+INSERT INTO texto VALUES (DEFAULT,'1','Qual a sua opiniao sobre policia no campus universitario?');
+INSERT INTO texto VALUES (DEFAULT,'1','Descreva seu sentimento sobre cotas');
+INSERT INTO texto VALUES (DEFAULT,'1','Alunos devem ter o mesmo peso em votos quanto os servidores?');
+INSERT INTO texto VALUES (DEFAULT,'1','Qual a sua opinião sobre a greve');
+
+
+--Questao de MULTIP.
+INSERT INTO mult VALUES (DEFAULT,'2','Quantos anos o brasil tem?');
+INSERT INTO mult VALUES (DEFAULT,'2','Qual a raiz quadrada de 16?');
+INSERT INTO mult VALUES (DEFAULT,'2','Qual o time de futebol brasileiro mais vitorioso?');
+INSERT INTO mult VALUES (DEFAULT,'2','Quantas linguas o brasileiro fala nativamente?');
+INSERT INTO mult VALUES (DEFAULT,'2','Pra você, o Brasil é o melhor país do mundo?');
+
+
+--ITEM
+INSERT INTO item VALUES (DEFAULT,'1','516');
+INSERT INTO item VALUES (DEFAULT,'1','500');
+INSERT INTO item VALUES (DEFAULT,'1','Nenhum das Alternativas a cima');
+INSERT INTO item VALUES (DEFAULT,'2','4');
+INSERT INTO item VALUES (DEFAULT,'2','8');
+
+--QTEXTO
+INSERT INTO qtexto VALUES (1,1);
+INSERT INTO qtexto VALUES (2,1);
+INSERT INTO qtexto VALUES (3,1);
+INSERT INTO qtexto VALUES (4,1);
+INSERT INTO qtexto VALUES (5,1);
+
+--QMULT
+INSERT INTO qmult VALUES (1,1,2);
+INSERT INTO qmult VALUES (1,2,2);
+INSERT INTO qmult VALUES (1,3,2);
+INSERT INTO qmult VALUES (2,3,2);
+INSERT INTO qmult VALUES (2,4,2);
+
+--RMULT
+INSERT INTO rmult VALUES (1,1,2,11045678901);
+INSERT INTO rmult VALUES (1,2,2,11745678901);
+INSERT INTO rmult VALUES (2,3,2,11045678901);
+INSERT INTO rmult VALUES (2,4,2,11745678901);
+INSERT INTO rmult VALUES (1,1,2,11745678901);
+
+
+
+
+
 
 

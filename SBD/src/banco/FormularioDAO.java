@@ -26,7 +26,7 @@ public class FormularioDAO
 			String sql = "INSERT INTO formulario (descricao) VALUES(?);";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
-			stmt.setString(1,formulario.getDescricao());
+			//stmt.setString(1,formulario.getDescricao());
 			
 			
 			
@@ -57,7 +57,7 @@ public class FormularioDAO
 				Formulario forms =  new Formulario();
 				
 				forms.setId(resultado.getInt("id"));
-				forms.setDescricao(resultado.getString("descricao"));
+				//forms.setDescricao(resultado.getString("descricao"));
 				
 				
 				formularios.add(forms);
