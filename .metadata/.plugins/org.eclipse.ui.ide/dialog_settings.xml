@@ -5,6 +5,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/marc/Documentos/Workspace/Paineis"/>
 			<item value="/home/marc/Área de Trabalho/TrabalhoSBD"/>
 			<item value="/home/marc/Documentos/AlgarTelecom/Desafios/workspace/Desafio2"/>
 		</list>

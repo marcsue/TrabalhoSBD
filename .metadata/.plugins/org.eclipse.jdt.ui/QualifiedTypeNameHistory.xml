@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="banco.AlunoDAO"/>
+<fullyQualifiedTypeName name="membrosUniversidade.Professor"/>
+<fullyQualifiedTypeName name="areasUniversidade.Unidade"/>
+<fullyQualifiedTypeName name="banco.UnidadeDAO"/>
+<fullyQualifiedTypeName name="banco.ProfessorDAO"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+<fullyQualifiedTypeName name="membrosUniversidade.Terceirizado"/>
+<fullyQualifiedTypeName name="membrosUniversidade.Tecnico"/>
+<fullyQualifiedTypeName name="banco.TerceirizadoDAO"/>
+<fullyQualifiedTypeName name="banco.TecnicoDAO"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="banco.CursoDAO"/>
+</qualifiedTypeNameHistroy>
