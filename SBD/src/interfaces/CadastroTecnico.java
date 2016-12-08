@@ -8,12 +8,20 @@ import java.sql.SQLException;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import membrosUniversidade.Aluno;
+import membrosUniversidade.Professor;
+import membrosUniversidade.Tecnico;
 import areasUniversidade.Curso;
+import areasUniversidade.Unidade;
 import banco.CursoDAO;
+import banco.ProfessorDAO;
+import banco.TecnicoDAO;
+import banco.TerceirizadoDAO;
+import banco.UnidadeDAO;
 
 public class CadastroTecnico extends JPanel implements ActionListener {
 	
@@ -33,7 +41,7 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 	public JTextField caixaDia;
 	public JTextField caixaMes;
 	public JTextField caixaAno;
-	public JTextField caixasiape;
+	public JTextField caixaSiape;
 	
 	public JComboBox comboUnidadeTrab;
 	
@@ -99,6 +107,11 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 		comboUnidadeTrab.setBounds(195, 216, 200, 20);
 		comboUnidadeTrab.setVisible(true);
 		comboUnidadeTrab.addItem("");
+		comboUnidadeTrab.addItem("FACOM");
+		comboUnidadeTrab.addItem("FEELT");
+		comboUnidadeTrab.addItem("FAMAT");
+		comboUnidadeTrab.addItem("PROGR");
+		comboUnidadeTrab.addItem("PROPO");
 		this.add(comboUnidadeTrab);
 		comboUnidadeTrab.addActionListener(this);
 		
@@ -146,10 +159,10 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 		this.add(caixaAno);
 		
 		//CAIXA SIAPE
-		caixasiape = new JTextField();
-		caixasiape.setBounds(73, 187, 150, 20);
-		caixasiape.setVisible(true);
-		this.add(caixasiape);
+		caixaSiape = new JTextField();
+		caixaSiape.setBounds(73, 187, 150, 20);
+		caixaSiape.setVisible(true);
+		this.add(caixaSiape);
 		
 		//BOTAO SALVAR
 		salvar = new JButton("SALVAR");
@@ -164,34 +177,23 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 		voltar.setVisible(true);
 		this.add(voltar);
 		voltar.addActionListener(this);
-		
-	/*	public void atualizacombo()
-		{
-			//tem que criar lista de alunos Array lits blablba
-			  
-			comboAluno.removeAllItems();
-			listaAlunos = alunoBanco.selecionarTodos();
-			int tamanhoBD = listaAlunos.size()-1;
-			Aluno aluno = new Aluno();
-			comboAluno.addItem("");
-			while (tamanhoBD>=0)
-			{
-				aluno = listaAlunos.get(tamanhoBD);
-				comboAluno.addItem(aluno.getNome());
-				
-				tamanhoBD--;
-			}
-		}*/
-		
 	}
+		
+	
+
+	
+	
 	
 	public void actionPerformed(ActionEvent e) 
 	{
 		if(e.getSource().equals(salvar))
 		{
-//			salvar();
-			Janela.getInstance().getSuperior().setVisible(true);
-			Janela.getInstance().getCadastrarTecnico().setVisible(false);
+			if (salvar())
+			{
+				Janela.getInstance().getSuperior().setVisible(true);
+				Janela.getInstance().getCadastrarTecnico().setVisible(false);
+			}
+			
 		}
 		if(e.getSource().equals(voltar))
 		{
@@ -201,46 +203,57 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 		
 	}
 	
-	
-/*	public void salvar()
+	public boolean salvar()
 	{
 		//falta inserir no banco e arrumar o curso
 		try 
 		{
-			Aluno aluno = new Aluno();
-			Curso curso;
-			Date data = new Date (Integer.parseInt(caixaAno.getText())-1900,Integer.parseInt(caixaMes.getText()) -1 , 
-					  Integer.parseInt(caixaDia.getText()));
-	
+			if(caixaCpf.getText()!=null)
+			{
+				Tecnico tecnico = new Tecnico();
+				Unidade unidade = new UnidadeDAO().buscaSigla(comboUnidadeTrab.getSelectedItem().toString());
+				
+				Date data = new Date (Integer.parseInt(caixaAno.getText())-1900,Integer.parseInt(caixaMes.getText()) -1 , 
+									  Integer.parseInt(caixaDia.getText()));
+				
+				tecnico.setCpf(caixaCpf.getText());
+				tecnico.setNome(caixaNome.getText());
+				tecnico.setNascimento(data);
+				tecnico.setEmailInstitucional(caixaEmailInstitucional.getText());
+				tecnico.setEmailSecundario(caixaEmailSecundario.getText());
+				tecnico.setSiape(caixaSiape.getText());
+				tecnico.setUnidade(unidade);
+
+				
+				TecnicoDAO tecnicoInsere = new TecnicoDAO();
+				
+				if(tecnicoInsere.insereTecnico(tecnico))
+					return true;
+				else
+					JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
+			}
 			
-			curso = new CursoDAO().buscaSigla(comboSiglaCurso.getSelectedItem().toString());
 			
-			
-			aluno.setCpf(caixaCpf.getText());
-			aluno.setNome(caixaNome.getText());
-			aluno.setEmailInstitucional(caixaEmailInstitucional.getText());
-			aluno.setEmailSecundario(caixaEmailSecundario.getText());
-			aluno.setMatricula(caixaMatricula.getText());		
-			aluno.setNascimento(data);
-		//	aluno.setCurso(curso);
-			
-			System.out.println(aluno.getCpf() + " " + aluno.getNascimento()+" "+aluno.getNome());
-			System.out.println(aluno.getEmailInstitucional());
-			System.out.println(aluno.getEmailSecundario());
-			//System.out.println(aluno.getCurso().getNome());
-			System.out.println(aluno.getMatricula());
 		
 		} 
 		catch (ClassNotFoundException e1) 
 		{
+			
 			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
 		} 
 		catch (SQLException e1) 
 		{
 			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
 		}
-		
+		catch (NumberFormatException e)
+		{
+			JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
+		}
+		return false;
 	}
 
-		*/
+
+		
 }

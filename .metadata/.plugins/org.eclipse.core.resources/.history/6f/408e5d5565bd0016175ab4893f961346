@@ -1,0 +1,179 @@
+package interfaces;
+
+import java.sql.SQLException;
+
+import javax.swing.JFrame;
+
+public class Janela extends JFrame
+{
+	//DECLARANDO PAINEIS
+	public Superior superior;
+	
+	public CriarFormulario criaFormulario;
+	public ResponderFormulario responderFormulario;
+	public ResultadoFormulario resultadoFormulario;
+	
+	public VerificaUsuario verifica;
+	public EscolhaPessoa escolhaPessoa;
+	
+	public CadastroAluno cadastrarAluno;
+	public CadastroProfessor cadastrarProfessor;
+	public CadastroTecnico cadastrarTecnico;
+	public CadastroTerceirizado cadastrarTerceirizado;
+	
+	
+	
+	private static Janela instance;
+	
+	public Janela() 
+	{
+		super("SBD"); // nome na barra superior
+		this.setSize(1366, 768);//definindo tamanho da janela
+		
+		this.setLayout(null);//para o ultimo painel n ficar em full screen
+		
+		IniciaTela(); //metodo inicia tela 
+		
+		this.setVisible(true);//deixando a janela visivel
+			
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE); //ativando botao fechar
+		
+	}
+	//METODO INSTANCE
+	public static Janela getInstance() throws ClassNotFoundException, SQLException
+	{
+		if(instance==null)
+		{
+			instance = new Janela();
+			return instance;
+		}
+		else
+		{
+			return instance;
+		}
+	}
+	
+	public CriarFormulario getCriaFormulario() {
+		return criaFormulario;
+	}
+	public void setCriaFormulario(CriarFormulario criaFormulario) {
+		this.criaFormulario = criaFormulario;
+	}
+	public ResponderFormulario getResponderFormulario() {
+		return responderFormulario;
+	}
+	public void setResponderFormulario(ResponderFormulario responderFormulario) {
+		this.responderFormulario = responderFormulario;
+	}
+	public VerificaUsuario getVerifica() {
+		return verifica;
+	}
+	public void setVerifica(VerificaUsuario verifica) {
+		this.verifica = verifica;
+	}
+	public Superior getSuperior() {
+		return superior;
+	}
+	public void setSuperior(Superior superior) {
+		this.superior = superior;
+	}
+	
+	public EscolhaPessoa getEscolhaPessoa() {
+		return escolhaPessoa;
+	}
+	public void setEscolhaPessoa(EscolhaPessoa escolhaPessoa) {
+		this.escolhaPessoa = escolhaPessoa;
+	}
+	
+	public CadastroAluno getCadastrarAluno() {
+		return cadastrarAluno;
+	}
+	public void setCadastrarAluno(CadastroAluno cadastrarAluno) {
+		this.cadastrarAluno = cadastrarAluno;
+	}
+	
+	public CadastroProfessor getCadastrarProfessor() {
+		return cadastrarProfessor;
+	}
+	public void setCadastrarProfessor(CadastroProfessor cadastrarProfessor) {
+		this.cadastrarProfessor = cadastrarProfessor;
+	}
+	
+
+	public CadastroTecnico getCadastrarTecnico() {
+		return cadastrarTecnico;
+	}
+	public void setCadastrarTecnico(CadastroTecnico cadastrarTecnico) {
+		this.cadastrarTecnico = cadastrarTecnico;
+	}
+	
+	public CadastroTerceirizado getCadastrarTerceirizado() {
+		return cadastrarTerceirizado;
+	}
+	public void setCadastrarTerceirizado(CadastroTerceirizado cadastrarTerceirizado) {
+		this.cadastrarTerceirizado = cadastrarTerceirizado;
+	}
+	
+	public ResultadoFormulario getResultadoFormulario() {
+		return resultadoFormulario;
+	}
+	public void setResultadoFormulario(ResultadoFormulario resultadoFormulario) {
+		this.resultadoFormulario = resultadoFormulario;
+	}
+	//METODO INICIA TELA
+	public void IniciaTela() throws ClassNotFoundException, SQLException
+	{
+		criaFormulario = new CriarFormulario();
+		criaFormulario.setBounds(10, 200, 1024, 680);
+		criaFormulario.setVisible(false);
+		this.getContentPane().add(criaFormulario);
+				
+		responderFormulario = new ResponderFormulario();
+		responderFormulario.setBounds(10, 200, 1024, 680);
+		responderFormulario.setVisible(false);
+		this.getContentPane().add(responderFormulario);
+		
+		resultadoFormulario = new ResultadoFormulario();
+		resultadoFormulario.setBounds(10, 200, 1024, 680);
+		resultadoFormulario.setVisible(false);
+		this.getContentPane().add(resultadoFormulario);
+		
+		
+		verifica = new VerificaUsuario();
+		verifica.setBounds(10, 200, 1024, 680);
+		verifica.setVisible(true);
+		this.getContentPane().add(verifica);
+		
+		escolhaPessoa = new EscolhaPessoa();
+		escolhaPessoa.setBounds(10, 200, 1024, 680);
+		escolhaPessoa.setVisible(false);
+		this.getContentPane().add(escolhaPessoa);
+		
+		cadastrarAluno = new CadastroAluno();
+		cadastrarAluno.setBounds(10, 200, 1024, 680);
+		cadastrarAluno.setVisible(false);
+		this.getContentPane().add(cadastrarAluno);
+		
+		cadastrarProfessor = new CadastroProfessor();
+		cadastrarProfessor.setBounds(10, 200, 1024, 680);
+		cadastrarProfessor.setVisible(false);
+		this.getContentPane().add(cadastrarProfessor);
+
+		cadastrarTecnico = new CadastroTecnico();
+		cadastrarTecnico.setBounds(10, 200, 1024, 680);
+		cadastrarTecnico.setVisible(false);
+		this.getContentPane().add(cadastrarTecnico);
+		
+		cadastrarTerceirizado = new CadastroTerceirizado();
+		cadastrarTerceirizado.setBounds(10, 200, 1024, 680);
+		cadastrarTerceirizado.setVisible(false);
+		this.getContentPane().add(cadastrarTerceirizado);
+		
+		
+		superior = new Superior();
+		superior.setBounds(10, 10, 1366, 768);
+		superior.setVisible(false);
+		this.getContentPane().add(superior);
+		
+	}
+}

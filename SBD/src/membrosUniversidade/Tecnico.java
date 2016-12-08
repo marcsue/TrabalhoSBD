@@ -18,7 +18,8 @@ public class Tecnico extends Pessoas
 		this.unidade = unidade;
 	}
 	
-
+	public Tecnico (){}
+	
 	public String getSiape() {
 		return siape;
 	}
