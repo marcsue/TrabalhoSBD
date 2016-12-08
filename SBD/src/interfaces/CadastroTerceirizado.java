@@ -8,12 +8,19 @@ import java.sql.SQLException;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import membrosUniversidade.Aluno;
+import membrosUniversidade.Professor;
+import membrosUniversidade.Terceirizado;
 import areasUniversidade.Curso;
+import areasUniversidade.Unidade;
 import banco.CursoDAO;
+import banco.ProfessorDAO;
+import banco.TerceirizadoDAO;
+import banco.UnidadeDAO;
 
 public class CadastroTerceirizado extends JPanel implements ActionListener {
 	
@@ -100,6 +107,8 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 		comboEmpresa.setBounds(150, 216, 200, 20);
 		comboEmpresa.setVisible(true);
 		comboEmpresa.addItem("");
+		comboEmpresa.addItem("Limpe Bem");
+		comboEmpresa.addItem("Tudo Seguro");
 		this.add(comboEmpresa);
 		comboEmpresa.addActionListener(this);
 		
@@ -145,16 +154,16 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 		caixaAno.setBounds(256, 157, 60, 20);
 		caixaAno.setVisible(true);
 		this.add(caixaAno);
-		
-		//CAIXA MATRICULA
+	
 		//COMBO SIGLA CURSO
 		comboSetor = new JComboBox();
 		comboSetor.setBounds(110, 187, 150, 20);
 		comboSetor.setVisible(true);
 		comboSetor.addItem("");
+		comboSetor.addItem("Limpeza");
+		comboSetor.addItem("Seguranca");
 		this.add(comboSetor);
 		comboSetor.addActionListener(this);
-		
 		
 		
 		//BOTAO SALVAR
@@ -195,9 +204,12 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 	{
 		if(e.getSource().equals(salvar))
 		{
-			//salvar();
-			Janela.getInstance().getSuperior().setVisible(true);
-			Janela.getInstance().getCadastrarTerceirizado().setVisible(false);
+			if (salvar())
+			{
+				Janela.getInstance().getSuperior().setVisible(true);
+				Janela.getInstance().getCadastrarTerceirizado().setVisible(false);
+			}
+			
 		}
 		if(e.getSource().equals(voltar))
 		{
@@ -207,47 +219,49 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 		
 	}
 	
-	
-	
-/*	public void salvar()
+	public boolean salvar()
 	{
 		//falta inserir no banco e arrumar o curso
 		try 
 		{
-			Aluno aluno = new Aluno();
-			Curso curso;
-			Date data = new Date (Integer.parseInt(caixaAno.getText())-1900,Integer.parseInt(caixaMes.getText()) -1 , 
-					  Integer.parseInt(caixaDia.getText()));
-	
-			
-			curso = new CursoDAO().buscaSigla(comboSiglaCurso.getSelectedItem().toString());
-			
-			
-			aluno.setCpf(caixaCpf.getText());
-			aluno.setNome(caixaNome.getText());
-			aluno.setEmailInstitucional(caixaEmailInstitucional.getText());
-			aluno.setEmailSecundario(caixaEmailSecundario.getText());
-			aluno.setMatricula(caixaMatricula.getText());		
-			aluno.setNascimento(data);
-		//	aluno.setCurso(curso);
-			
-			System.out.println(aluno.getCpf() + " " + aluno.getNascimento()+" "+aluno.getNome());
-			System.out.println(aluno.getEmailInstitucional());
-			System.out.println(aluno.getEmailSecundario());
-			//System.out.println(aluno.getCurso().getNome());
-			System.out.println(aluno.getMatricula());
+			if(caixaCpf.getText()!=null)
+			{
+				Terceirizado terceirizado = new Terceirizado();
+				
+				Date data = new Date (Integer.parseInt(caixaAno.getText())-1900,Integer.parseInt(caixaMes.getText()) -1 , 
+									  Integer.parseInt(caixaDia.getText()));
+				
+				terceirizado.setCpf(caixaCpf.getText());
+				terceirizado.setNome(caixaNome.getText());
+				terceirizado.setNascimento(data);
+				terceirizado.setEmailInstitucional(caixaEmailInstitucional.getText());
+				terceirizado.setEmailSecundario(caixaEmailSecundario.getText());
+				terceirizado.setEmpresa(comboEmpresa.getSelectedItem().toString());
+				terceirizado.setSetor(comboSetor.getSelectedItem().toString());
+				
+
+				TerceirizadoDAO tercerizadoInsere = new TerceirizadoDAO();
+				
+				if(tercerizadoInsere.insereTerceirizado(terceirizado))
+					return true;
+				else
+					JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
+			}
 		
 		} 
 		catch (ClassNotFoundException e1) 
 		{
+			
 			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
 		} 
-		catch (SQLException e1) 
+		catch (NumberFormatException e)
 		{
-			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
 		}
-		
-	}*/
+		return false;
+	}
+
 
 		
 }

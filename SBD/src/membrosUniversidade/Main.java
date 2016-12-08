@@ -25,7 +25,7 @@ public class Main {
 	public static void main (String[] args) throws ClassNotFoundException, SQLException
 	{
 		
-		//Janela.getInstance();
+		Janela.getInstance();
 		
 		//Curso uni = new Curso();
 		
@@ -43,12 +43,12 @@ public class Main {
 		
 		//System.out.println(forD.buscaSigla("facom").getNome());
 		
-	//	System.out.println(cadastrados);
+	/*	System.out.println(cadastrados);
 	
 		for(int i=0;i!=cadastrados.size();i++)
 			System.out.println(cadastrados.get(i).getNome()+" "+cadastrados.get(i).getSigla()+" "+cadastrados.get(i).getUnidade().getSigla());
 		
-		
+		*/
 		
 	}
 

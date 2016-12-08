@@ -7,40 +7,41 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import areasUniversidade.Curso;
+import areasUniversidade.Unidade;
 import membrosUniversidade.Aluno;
-import pesquisa.Formulario;
+import membrosUniversidade.Professor;
+import membrosUniversidade.Tecnico;
 
-public class AlunoDAO 
-{
-	private Connection connection;
+public class TecnicoDAO {
 	
-	public AlunoDAO() throws ClassNotFoundException
+private Connection connection;
+	
+	public TecnicoDAO() throws ClassNotFoundException
 	{
 		this.connection = new ConnectionFactory().getConnection();
 	}
 	
-	public boolean insereAluno(Aluno aluno)
+	public boolean insereTecnico(Tecnico tecnico)
 	{
 		try
 		{
-			String sql = "SELECT insereAluno(?,?,?,?,?,?,?,?,?);";
+			String sql = "SELECT insereTecnico(?,?,?,?,?,?,?,?);";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
-			stmt.setString(1,aluno.getCpf());
-			stmt.setString(2, aluno.getNome());
-			stmt.setDate(3, (Date) aluno.getNascimento());
-			stmt.setString(4, aluno.getEmailInstitucional());
-			stmt.setString(5, aluno.getEmailSecundario());
-			stmt.setString(6, "aluno");
-			stmt.setString(7, aluno.getMatricula());
-			stmt.setString(8, aluno.getCurso().getSigla());
-			stmt.setString(9, aluno.getCurso().getUnidade().getSigla());
+			stmt.setString(1,tecnico.getCpf());
+			stmt.setString(2, tecnico.getNome());
+			stmt.setDate(3, (Date) tecnico.getNascimento());
+			stmt.setString(4, tecnico.getEmailInstitucional());
+			stmt.setString(5, tecnico.getEmailSecundario());
+			stmt.setString(6, "tecnico");
+			stmt.setString(7, tecnico.getSiape());
+			stmt.setString(8, tecnico.getUnidade().getSigla());
 			
 			stmt.execute();
 			stmt.close();
 			
 			return true;
+			
 		}
 		catch (SQLException e)
 		{
@@ -53,21 +54,23 @@ public class AlunoDAO
 	{
 		try
 		{
-			Aluno aluno =  new Aluno();	
+			Professor prof =  new Professor();	
 			
-			String sql = "SELECT cpf FROM aluno WHERE cpf=?;";
+			String sql = "SELECT cpf FROM tecnico WHERE cpf=?;";
 			PreparedStatement stmt  = connection.prepareStatement(sql);
 			stmt.setString(1,cpf);
 			
 			ResultSet resultado = stmt.executeQuery();
 			
 			while(resultado.next())
-			{				
-				aluno.setCpf(resultado.getString("cpf"));
+			{
+				
+				
+				prof.setCpf(resultado.getString("cpf"));
 			}
 			stmt.close();
 			
-			if(aluno.getCpf()==null)
+			if(prof.getCpf()==null)
 				return false;
 			else
 				return true;
@@ -80,7 +83,5 @@ public class AlunoDAO
 		}
 		
 	}
-	
 
 }
-

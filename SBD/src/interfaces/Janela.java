@@ -1,5 +1,7 @@
 package interfaces;
 
+import java.sql.SQLException;
+
 import javax.swing.JFrame;
 
 public class Janela extends JFrame
@@ -23,7 +25,7 @@ public class Janela extends JFrame
 	
 	private static Janela instance;
 	
-	public Janela()
+	public Janela() 
 	{
 		super("SBD"); // nome na barra superior
 		this.setSize(1366, 768);//definindo tamanho da janela
@@ -119,7 +121,7 @@ public class Janela extends JFrame
 		this.resultadoFormulario = resultadoFormulario;
 	}
 	//METODO INICIA TELA
-	public void IniciaTela()
+	public void IniciaTela() 
 	{
 		criaFormulario = new CriarFormulario();
 		criaFormulario.setBounds(10, 200, 1024, 680);

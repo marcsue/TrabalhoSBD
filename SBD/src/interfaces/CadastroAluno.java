@@ -4,13 +4,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import banco.AlunoDAO;
 import banco.CursoDAO;
 import areasUniversidade.Curso;
 import membrosUniversidade.Aluno;
@@ -35,14 +39,18 @@ public class CadastroAluno extends JPanel implements ActionListener
 	public JTextField caixaMes;
 	public JTextField caixaAno;
 	public JTextField caixaMatricula;
-	//
-
+	
 	public JComboBox comboSiglaCurso;
 	
 	public JButton salvar;
 	public JButton voltar;
 	
-	public CadastroAluno () 
+
+	public ArrayList<Curso> listaCursos;
+	public CursoDAO cursoBanco;
+	
+	
+	public CadastroAluno ()  
 	{
 		super();
 		this.setSize(1366, 768);		
@@ -101,6 +109,9 @@ public class CadastroAluno extends JPanel implements ActionListener
 		comboSiglaCurso.setBounds(150, 216, 200, 20);
 		comboSiglaCurso.setVisible(true);
 		comboSiglaCurso.addItem("");
+		comboSiglaCurso.addItem("BCC");
+		comboSiglaCurso.addItem("BSI");
+		comboSiglaCurso.addItem("LMA");
 		this.add(comboSiglaCurso);
 		comboSiglaCurso.addActionListener(this);
 		
@@ -167,36 +178,24 @@ public class CadastroAluno extends JPanel implements ActionListener
 		this.add(voltar);
 		voltar.addActionListener(this);
 		
-	/*	public void atualizacombo()
-		{
-			//tem que criar lista de alunos Array lits blablba
-			  
-			comboAluno.removeAllItems();
-			listaAlunos = alunoBanco.selecionarTodos();
-			int tamanhoBD = listaAlunos.size()-1;
-			Aluno aluno = new Aluno();
-			comboAluno.addItem("");
-			while (tamanhoBD>=0)
-			{
-				aluno = listaAlunos.get(tamanhoBD);
-				comboAluno.addItem(aluno.getNome());
-				
-				tamanhoBD--;
-			}
-		}*/
-		
-		
+
+
 	}
+		
+		
+	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
 		if(e.getSource().equals(salvar))
 		{
-			salvar();
+			if (salvar())
+			{
+				Janela.getInstance().getSuperior().setVisible(true);
+				Janela.getInstance().getCadastrarAluno().setVisible(false);
+			}
 			
-			Janela.getInstance().getSuperior().setVisible(true);
-			Janela.getInstance().getCadastrarAluno().setVisible(false);
 		}
 		if(e.getSource().equals(voltar))
 		{
@@ -206,47 +205,53 @@ public class CadastroAluno extends JPanel implements ActionListener
 	}
 	
 	
-	public void salvar()
+	public boolean salvar()
 	{
 		//falta inserir no banco e arrumar o curso
 		try 
 		{
-			Aluno aluno = new Aluno();
-			Curso curso;
-			Date data = new Date (Integer.parseInt(caixaAno.getText())-1900,Integer.parseInt(caixaMes.getText()) -1 , 
-								  Integer.parseInt(caixaDia.getText()));
-	
+			if(caixaCpf.getText()!=null)
+			{
+				Aluno aluno = new Aluno();
+				Curso curso= new CursoDAO().buscaSigla(comboSiglaCurso.getSelectedItem().toString());
+				
+				Date data = new Date (Integer.parseInt(caixaAno.getText())-1900,Integer.parseInt(caixaMes.getText()) -1 , 
+									  Integer.parseInt(caixaDia.getText()));
+				
+				aluno.setCpf(caixaCpf.getText());
+				aluno.setNome(caixaNome.getText());
+				aluno.setNascimento(data);
+				aluno.setEmailInstitucional(caixaEmailInstitucional.getText());
+				aluno.setEmailSecundario(caixaEmailSecundario.getText());
+				aluno.setMatricula(caixaMatricula.getText());		
+				aluno.setCurso(curso);
 			
-			curso = new CursoDAO().buscaSigla(comboSiglaCurso.getSelectedItem().toString());
-			
-			
-			aluno.setCpf(caixaCpf.getText());
-			aluno.setNome(caixaNome.getText());
-			aluno.setEmailInstitucional(caixaEmailInstitucional.getText());
-			aluno.setEmailSecundario(caixaEmailSecundario.getText());
-			aluno.setMatricula(caixaMatricula.getText());		
-			aluno.setNascimento(data);
-		//	aluno.setCurso(curso);
-			
-			System.out.println(aluno.getCpf() + " " + aluno.getNascimento()+" "+aluno.getNome());
-			System.out.println(aluno.getEmailInstitucional());
-			System.out.println(aluno.getEmailSecundario());
-			//System.out.println(aluno.getCurso().getNome());
-			System.out.println(aluno.getMatricula());
-		
+				
+				AlunoDAO alunoInsere = new AlunoDAO();
+				
+				if(alunoInsere.insereAluno(aluno))
+					return true;
+				else
+					JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
+			}
+					
 		} 
 		catch (ClassNotFoundException e1) 
 		{
+			
 			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
 		} 
 		catch (SQLException e1) 
 		{
 			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
 		}
-		
+		catch (NumberFormatException e)
+		{
+			JOptionPane.showMessageDialog(null, "Ops algo deu erroado, confirme seus dados!");
+		}
+		return false;
 	}
-
-		
 }
-	
 

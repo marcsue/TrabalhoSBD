@@ -24,73 +24,29 @@ private Connection connection;
 	{
 		try
 		{
-			String sql = "INSERT INTO professor (cpf,nome, emailInstitucional, emailSecundario, dataNascimento, siape, regimeTrabalho, siglaUAC) VALUES(?,?,?,?,?,?,?,?);";
+			String sql = "SELECT insereProfessor(?,?,?,?,?,?,?,?,?);";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
 			stmt.setString(1,professor.getCpf());
 			stmt.setString(2, professor.getNome());
-			stmt.setString(3, professor.getEmailInstitucional());
-			stmt.setString(4, professor.getEmailSecundario());
-			stmt.setDate(5, (Date) professor.getNascimento());
-			stmt.setString(6, professor.getSiape());
-			stmt.setString(7, professor.getRegimeTrabalho());
-			stmt.setString(8, professor.getUnidadeAcademica().getSigla());
-			
+			stmt.setDate(3, (Date) professor.getNascimento());
+			stmt.setString(4, professor.getEmailInstitucional());
+			stmt.setString(5, professor.getEmailSecundario());
+			stmt.setString(6, "professor");
+			stmt.setString(7, professor.getSiape());
+			stmt.setString(8, professor.getRegimeTrabalho());
+			stmt.setString(9, professor.getUnidadeAcademica().getSigla());
 			
 			stmt.execute();
 			stmt.close();
 			
 			return true;
+			
 		}
 		catch (SQLException e)
 		{
 			System.out.println(e);
 			return false;
-		}
-	}
-	
-	public ArrayList<Professor> buscaTodos() throws ClassNotFoundException
-	{
-		try
-		{
-			ArrayList<Professor> professores = new ArrayList<Professor>();
-			UnidadeDAO unidadeAcademicaDAO = new UnidadeDAO();
-			Unidade unidadeAcademica = new Unidade();
-			
-			
-			String sql = "SELECT * FROM professor;";
-			PreparedStatement stmt  = connection.prepareStatement(sql);
-			
-			ResultSet resultado = stmt.executeQuery();
-			
-			while(resultado.next())
-			{
-				Professor professor =  new Professor();
-				
-				
-				professor.setCpf(resultado.getString("cpf"));
-				professor.setNome(resultado.getString("nome"));
-				professor.setEmailInstitucional(resultado.getString("emailInstitucional"));
-				professor.setEmailSecundario(resultado.getString("emailSecundario"));
-				professor.setNascimento(resultado.getDate("dataNascimento"));
-				professor.setSiape(resultado.getString("siape"));
-				professor.setRegimeTrabalho(resultado.getString("regimeTrabalho"));
-				
-			
-				unidadeAcademica = unidadeAcademicaDAO.buscaSigla(resultado.getString("siglaUAC"));
-				
-				professores.add(professor);
-			}
-			stmt.close();
-			
-			return professores;
-			
-		}
-		catch (SQLException e)
-		{
-			System.out.println(e);
-			
-			return null;
 		}
 	}
 	
