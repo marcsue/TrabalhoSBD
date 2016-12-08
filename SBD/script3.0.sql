@@ -9,40 +9,7 @@
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SET check_function_bodies = false;
-SET client_min_messages = warning;
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
---DROP SCHEMA bancodb CASCADE
-CREATE SCHEMA IF NOT EXISTS bancodb;
-
-ALTER SCHEMA bancodb OWNER TO root; --alterar para root marc
-
-COMMENT ON SCHEMA bancodb IS 'standard public schema';
-
---
--- TOC entry 179 (class 3079 OID 11855)
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
---
-
-CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
-
---
--- TOC entry 2051 (class 0 OID 0)
--- Dependencies: 179
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
---
-
-COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
-
-SET search_path = bancodb, pg_catalog;
-SET default_tablespace = '';
-SET default_with_oids = false;
+--DROP SCHEMA public CASCADE
 
 -- -----------------------------------------------------
 -- Table `mydb`.`pessoa`
@@ -101,11 +68,7 @@ CREATE TABLE IF NOT EXISTS mult (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS unidade (
   sigla CHAR(5) NOT NULL,
-<<<<<<< HEAD
-  nome VARCHAR(100) ,  
-=======
   nome VARCHAR(100) ,
->>>>>>> 40aa9af28b8442431ae747b11b1872b244c6ef7d
   areaconhecimento VARCHAR(100),
   tipo_unidade INT NOT NULL,
   CONSTRAINT uni_pk PRIMARY KEY (sigla)
