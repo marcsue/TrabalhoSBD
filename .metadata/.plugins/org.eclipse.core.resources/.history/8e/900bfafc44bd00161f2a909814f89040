@@ -19,6 +19,27 @@ public class UnidadeDAO
 		this.connection = new ConnectionFactory().getConnection();
 	}
 	
+	public boolean insereUnidade(Unidade unidadeAcademica)
+	{
+		try
+		{
+			String sql = "INSERT INTO unidadeAcademica (siglaUA, nome, areaConhecimento) VALUES(?,?,?);";
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			
+			stmt.setString(1,unidadeAcademica.getSigla());
+			stmt.setString(2, unidadeAcademica.getNome());
+			stmt.setString(3, unidadeAcademica.getAreaConhecimento());
+			
+			stmt.execute();
+			stmt.close();
+			return true;
+		}
+		catch (SQLException e)
+		{
+			System.out.println(e);
+			return false;
+		}
+	}
 	
 	public ArrayList<Unidade> buscaTodas()
 	{
@@ -39,7 +60,6 @@ public class UnidadeDAO
 				uni.setSigla(resultado.getString("siglaUAC"));
 				uni.setNome(resultado.getString("nome"));
 				uni.setAreaConhecimento(resultado.getString("areaConhecimento"));
-				uni.setTipo(resultado.getInt("tipo"));
 				
 				unidades.add(uni);
 			}
@@ -76,7 +96,7 @@ public class UnidadeDAO
 				unidadeAC.setSigla(resultado.getString("siglaUAC"));
 				unidadeAC.setNome(resultado.getString("nome"));
 				unidadeAC.setAreaConhecimento(resultado.getString("areaConhecimento"));
-				unidadeAC.setTipo(resultado.getInt("tipo"));
+
 			}
 			stmt.close();
 			

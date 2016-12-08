@@ -23,20 +23,21 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 	public JLabel emailInstitucional;
 	public JLabel emailSecundario;
 	public JLabel dtaNasc;
-	public JLabel empresa;
-	public JLabel setor;
+	public JLabel matricula;
+	public JLabel siglaCurso;//label p/ o combo
 	
 	
 	public JTextField caixaCpf;
 	public JTextField caixaNome;
 	public JTextField caixaEmailInstitucional;
 	public JTextField caixaEmailSecundario;
-	public JTextField caixaDia;
+	public JTextField caixaDia;//dta de nascimento
 	public JTextField caixaMes;
 	public JTextField caixaAno;
-	
-	public JComboBox comboEmpresa;
-	public JComboBox comboSetor;
+	public JTextField caixaMatricula;
+	//public JTextField caixaSiglaCurso;
+
+	public JComboBox comboSiglaCurso;//combo p/ o label
 	
 	public JButton salvar;
 	public JButton voltar;
@@ -84,24 +85,24 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 		this.add(dtaNasc);
 		
 		//LABEL MATRICULA
-		empresa = new JLabel("EMPRESA:");
-		empresa.setBounds(20, 180, 200, 30);
-		empresa.setVisible(true);
-		this.add(empresa);
+		matricula = new JLabel("MATRICULA:");
+		matricula.setBounds(20, 180, 200, 30);
+		matricula.setVisible(true);
+		this.add(matricula);
 		
 		//LABEL SIGLA CURSO
-		setor = new JLabel("SETOR:");
-		setor.setBounds(20, 210, 200, 30);
-		setor.setVisible(true);
-		this.add(setor);
+		siglaCurso = new JLabel("SIGLA DO CURSO:");
+		siglaCurso.setBounds(20, 210, 200, 30);
+		siglaCurso.setVisible(true);
+		this.add(siglaCurso);
 	
-		//COMBO EMPRESA
-		comboEmpresa = new JComboBox();
-		comboEmpresa.setBounds(150, 216, 200, 20);
-		comboEmpresa.setVisible(true);
-		comboEmpresa.addItem("");
-		this.add(comboEmpresa);
-		comboEmpresa.addActionListener(this);
+		//COMBO SIGLA CURSO
+		comboSiglaCurso = new JComboBox();
+		comboSiglaCurso.setBounds(150, 216, 200, 20);
+		comboSiglaCurso.setVisible(true);
+		comboSiglaCurso.addItem("");
+		this.add(comboSiglaCurso);
+		comboSiglaCurso.addActionListener(this);
 		
 		//CAIXA CPF
 		caixaCpf = new JTextField();
@@ -147,15 +148,10 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 		this.add(caixaAno);
 		
 		//CAIXA MATRICULA
-		//COMBO SIGLA CURSO
-		comboSetor = new JComboBox();
-		comboSetor.setBounds(110, 187, 150, 20);
-		comboSetor.setVisible(true);
-		comboSetor.addItem("");
-		this.add(comboSetor);
-		comboSetor.addActionListener(this);
-		
-		
+		caixaMatricula = new JTextField();
+		caixaMatricula.setBounds(110, 187, 150, 20);
+		caixaMatricula.setVisible(true);
+		this.add(caixaMatricula);
 		
 		//BOTAO SALVAR
 		salvar = new JButton("SALVAR");
@@ -195,7 +191,7 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 	{
 		if(e.getSource().equals(salvar))
 		{
-			//salvar();
+			salvar();
 			Janela.getInstance().getSuperior().setVisible(true);
 			Janela.getInstance().getCadastrarTerceirizado().setVisible(false);
 		}
@@ -209,7 +205,7 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 	
 	
 	
-/*	public void salvar()
+	public void salvar()
 	{
 		//falta inserir no banco e arrumar o curso
 		try 
@@ -247,7 +243,7 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 			e1.printStackTrace();
 		}
 		
-	}*/
+	}
 
 		
 }

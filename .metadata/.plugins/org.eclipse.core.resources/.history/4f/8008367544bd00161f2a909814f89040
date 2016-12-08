@@ -195,7 +195,7 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 	{
 		if(e.getSource().equals(salvar))
 		{
-			//salvar();
+			salvar();
 			Janela.getInstance().getSuperior().setVisible(true);
 			Janela.getInstance().getCadastrarTerceirizado().setVisible(false);
 		}
@@ -209,7 +209,7 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 	
 	
 	
-/*	public void salvar()
+	public void salvar()
 	{
 		//falta inserir no banco e arrumar o curso
 		try 
@@ -247,7 +247,7 @@ public class CadastroTerceirizado extends JPanel implements ActionListener {
 			e1.printStackTrace();
 		}
 		
-	}*/
+	}
 
 		
 }

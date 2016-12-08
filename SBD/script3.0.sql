@@ -21,7 +21,7 @@ SET client_min_messages = warning;
 --DROP SCHEMA bancodb CASCADE
 CREATE SCHEMA IF NOT EXISTS bancodb;
 
-ALTER SCHEMA bancodb OWNER TO postgres; --alterar para root marc
+ALTER SCHEMA bancodb OWNER TO root; --alterar para root marc
 
 COMMENT ON SCHEMA bancodb IS 'standard public schema';
 
@@ -100,8 +100,8 @@ CREATE TABLE IF NOT EXISTS mult (
 -- Table `mydb`.`unidade`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS unidade (
-  nome VARCHAR(100) ,
   sigla CHAR(5) NOT NULL,
+  nome VARCHAR(100) ,  
   areaconhecimento VARCHAR(100),
   tipo_unidade INT NOT NULL,
   CONSTRAINT uni_pk PRIMARY KEY (sigla)
@@ -112,8 +112,8 @@ CREATE TABLE IF NOT EXISTS unidade (
 -- Table `mydb`.`curso`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS curso (
-  nome VARCHAR(100),
   sigla CHAR(5) NOT NULL,
+  nome VARCHAR(100),
   unidade_academica CHAR(5) NOT NULL,
   CONSTRAINT curso_pk PRIMARY KEY (unidade_academica, sigla),
   CONSTRAINT curso_fk FOREIGN KEY (unidade_academica) REFERENCES unidade(sigla)

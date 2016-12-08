@@ -76,7 +76,7 @@ public class UnidadeDAO
 				unidadeAC.setSigla(resultado.getString("siglaUAC"));
 				unidadeAC.setNome(resultado.getString("nome"));
 				unidadeAC.setAreaConhecimento(resultado.getString("areaConhecimento"));
-				unidadeAC.setTipo(resultado.getInt("tipo"));
+
 			}
 			stmt.close();
 			

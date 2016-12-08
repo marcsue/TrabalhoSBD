@@ -6,8 +6,9 @@ INDEX VERSION 1.127+/home/marc/Área de Trabalho/TrabalhoSBD/.metadata/.plugins/
 3888198363.index
 1913109094.index
 2233963263.index
-2771403403.index
 2982035129.index
+2771403403.index
+68245651.index
 2066489604.index
 1923978220.index
 2841451250.index
