@@ -5,9 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
-import areasUniversidade.Unidade;
 import pesquisa.Formulario;
 import pesquisa.Qmulti;
 import pesquisa.Qtexto;
@@ -29,24 +27,62 @@ public class FormularioDAO
 	{
 		try
 		{
-			String sql = "INSERT INTO formulario VALUES(?);";
+			String sql = "INSERT INTO formulario VALUES(?,?,?,?,?,?);";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
-			//stmt.setString(1,formulario.getDescricao());
-			
-			
+			stmt.setString(1,"DEFAULT");
+			stmt.setString(2,formulario.getTitulo());
+			stmt.setString(3, formulario.getCpf());
+			stmt.setInt(4, formulario.getTipo_restricao());
+			stmt.setDate(5, formulario.getData_inicio());
+			stmt.setDate(6, formulario.getData_fim());	
 			
 			stmt.execute();
 			stmt.close();
-			return true;
+			
+			
+			for(int i=0; i!= formulario.getQuestoes().size();i++)
+			{
+				if(formulario.getQuestoes().get(i) instanceof Qmulti)
+				{
+					String insere = "INSERT INTO multi VALUES (?,?,?);";
+					stmt = connection.prepareStatement(insere);
+					
+					stmt.setInt(1, ((Qmulti)(formulario.getQuestoes().get(i))).getId());
+					stmt.setInt(2, ((Qmulti)(formulario.getQuestoes().get(i))).getId_form());
+					stmt.setString(3, ((Qmulti)(formulario.getQuestoes().get(i))).getDescricao());
+					
+					
+				}
+				else	
+				{
+					String insere = "INSERT INTO  texto VALUES (?,?,?);";
+					stmt = connection.prepareStatement(insere);
+					
+					stmt.setInt(1, ((Qmulti)(formulario.getQuestoes().get(i))).getId());
+					stmt.setInt(2, ((Qmulti)(formulario.getQuestoes().get(i))).getId_form());
+					stmt.setString(3, ((Qmulti)(formulario.getQuestoes().get(i))).getDescricao());
+					
+				}
+					
+			}
+			
+			return true;			
+	
 		}
 		catch (SQLException e)
 		{
 			System.out.println(e);
 			return false;
 		}
+		
 	}
 	
+	private Object Qmulti(Questao questao) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public ArrayList<Formulario> buscaTodos() // Retorna todos os formulários possíveis e suas informações;
 	{
 		try
@@ -68,11 +104,7 @@ public class FormularioDAO
 				forms.setCpf(resultado.getString("cpf_criador"));
 				forms.setData_inicio(resultado.getDate("data_inicial"));
 				forms.setData_fim(resultado.getDate("data_final"));
-				forms.setProfessor(resultado.getBoolean("professor"));
-				forms.setAluno(resultado.getBoolean("aluno"));
-				forms.setTerceirizado(resultado.getBoolean("terceirizado"));
-				forms.setTecnico(resultado.getBoolean("tecnico"));
-				
+				forms.setTipo_restricao(resultado.getInt("tipo_restricao"));				
 				
 				formularios.add(forms);
 			}
@@ -89,8 +121,8 @@ public class FormularioDAO
 		}
 	}
 	
-	public Formulario buscaForm(Formulario inc) // Retorna o formulário com todas as informações(respostas, questões, tudo)
-	//RECEBE um formulário incompleto;
+	public Formulario buscaForm(Formulario inc) // Retorna o formulários com todas as informações(respostas, questï¿½es, tudo)
+	//RECEBE um formulários incompleto;
 	{
 		try
 		{
@@ -235,7 +267,7 @@ public class FormularioDAO
 		return q;
 	}
 	private Qmulti findItens(Qmulti q){
-			try //Pegando OS ITENS multiplaescolha de uma questão.
+			try //Pegando OS ITENS multiplaescolha de uma questão
 			{
 				q = (Qmulti)q;
 				String sql = "SELECT * FROM item WHERE id_questao = "+q.getId()+";";

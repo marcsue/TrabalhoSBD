@@ -9,9 +9,13 @@ public class Formulario
 	private Date data_inicio;
 	private String cpf;
 	private String titulo;
-	private boolean aluno;
-	private boolean professor;
-	private boolean terceirizado;
+	private int tipo_restricao;
+	private static ArrayList<Questao> questoes = new ArrayList<>();
+	
+	public Formulario()
+	{
+		
+	}
 	
 	public String getTitulo() {
 		return titulo;
@@ -39,39 +43,23 @@ public class Formulario
 	public void setData_inicio(Date data_inicio) {
 		this.data_inicio = data_inicio;
 	}
-	public boolean isAluno() {
-		return aluno;
-	}
-	public void setAluno(boolean aluno) {
-		this.aluno = aluno;
-	}
-	public boolean isProfessor() {
-		return professor;
-	}
-	public void setProfessor(boolean professor) {
-		this.professor = professor;
-	}
-	public boolean isTerceirizado() {
-		return terceirizado;
-	}
-	public void setTerceirizado(boolean terceirizado) {
-		this.terceirizado = terceirizado;
-	}
-	public boolean isTecnico() {
-		return tecnico;
-	}
-	public void setTecnico(boolean tecnico) {
-		this.tecnico = tecnico;
-	}
-
-	private boolean tecnico;
-	private static ArrayList<Questao> questoes = new ArrayList<>();
 	
-	public Formulario()
-	{
-		
+	public int getTipo_restricao() {
+		return tipo_restricao;
+	}
+	public void setTipo_restricao(int tipo_restricao) {
+		this.tipo_restricao = tipo_restricao;
 	}
 
+	
+
+	public static ArrayList<Questao> getQuestoes() {
+		return questoes;
+	}
+
+	public static void setQuestoes(ArrayList<Questao> questoes) {
+		Formulario.questoes = questoes;
+	}
 
 	public Integer getId() {
 		return id;
