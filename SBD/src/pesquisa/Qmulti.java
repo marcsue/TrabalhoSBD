@@ -9,6 +9,11 @@ public class Qmulti extends Questao{
 	itens = new ArrayList<Item>();
 	}
 	
+	public Qmulti(String pergunta){
+		super(pergunta);
+		itens = new ArrayList<Item>();
+	}
+	
 	public void fullyItem(Item i){
 		itens.add(i);
 	}
@@ -17,5 +22,14 @@ public class Qmulti extends Questao{
 		Item i = new Item(id,desc);
 		itens.add(i);
 		
+	}
+	public void addItemNid(String desc){
+		Item i = new Item();
+		i.setDescricao(desc);
+		itens.add(i);
+		
+	}
+	public ArrayList<Item> getItem(){
+		return this.itens;
 	}
 }

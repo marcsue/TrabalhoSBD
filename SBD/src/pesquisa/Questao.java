@@ -8,12 +8,15 @@ public class Questao
 	private int id_form;
 	private String pergunta;
 	private static ArrayList<Resposta> respostas = new ArrayList<>();
-	
+	public Questao(String pergunta){
+		this.pergunta = pergunta;
+	}
 	public Questao(int id_form, Integer id, String pergunta) {
 		this.id = id;
 		this.setId_form(id_form);
 		this.pergunta = pergunta;
 	}
+
 
 	public Integer getId() {
 		return id;

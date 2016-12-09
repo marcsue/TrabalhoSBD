@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import pesquisa.Formulario;
+import pesquisa.Item;
 import pesquisa.Qmulti;
 import pesquisa.Qtexto;
 import pesquisa.Questao;
@@ -27,44 +28,67 @@ public class FormularioDAO
 	{
 		try
 		{
-			String sql = "INSERT INTO formulario VALUES(?,?,?,?,?,?);";
+			String sql = "INSERT INTO formulario VALUES(DEFAULT,?,?,?,?,?);";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
-			stmt.setString(1,"DEFAULT");
-			stmt.setString(2,formulario.getTitulo());
-			stmt.setString(3, formulario.getCpf());
-			stmt.setInt(4, formulario.getTipo_restricao());
-			stmt.setDate(5, formulario.getData_inicio());
-			stmt.setDate(6, formulario.getData_fim());	
 			
+			//stmt.setInt(1,"DEFAULT");
+			stmt.setString(5,formulario.getTitulo());
+			stmt.setString(1, formulario.getCpf());
+			stmt.setInt(2, formulario.getTipo_restricao());
+			stmt.setDate(3, formulario.getData_inicio());
+			stmt.setDate(4, formulario.getData_fim());	
 			stmt.execute();
-			stmt.close();
 			
+			//pegar id do formulário
+			sql = "SELECT MAX(id) FROM formulario";
+			PreparedStatement stmt2  = connection.prepareStatement(sql);			
+			ResultSet resultado = stmt2.executeQuery();
+			resultado.next();
+			int form_id_novo = resultado.getInt("max");
 			
 			for(int i=0; i!= formulario.getQuestoes().size();i++)
 			{
 				if(formulario.getQuestoes().get(i) instanceof Qmulti)
 				{
-					String insere = "INSERT INTO multi VALUES (?,?,?);";
-					stmt = connection.prepareStatement(insere);
+					String insere = "INSERT INTO mult VALUES (DEFAULT,?,?);";
+					PreparedStatement stmt3 = connection.prepareStatement(insere);
 					
-					stmt.setInt(1, ((Qmulti)(formulario.getQuestoes().get(i))).getId());
-					stmt.setInt(2, ((Qmulti)(formulario.getQuestoes().get(i))).getId_form());
-					stmt.setString(3, ((Qmulti)(formulario.getQuestoes().get(i))).getDescricao());
-					
+					stmt3.setInt(1, form_id_novo);
+					stmt3.setString(2, ((Qmulti)(formulario.getQuestoes().get(i))).getDescricao());
+					stmt3.execute();
+
+					//pegar ultimo ID questão multipla
+					sql = "SELECT MAX(id) FROM mult";
+					PreparedStatement stmt4  = connection.prepareStatement(sql);	
+					//ArrayList <ResultSet> resultados = new ArrayList<ResultSet>();
+					//resultados.add(stmt4.executeQuery());
+					//result = resultados.get(i);
+					ResultSet res = stmt4.executeQuery();
+					res.next();
+					int q_id = res.getInt("max");
+					for(Item a: ((Qmulti)(formulario.getQuestoes().get(i))).getItem()){																					
+						String sqlint = "INSERT INTO item VALUES (DEFAULT,?,?);";
+						PreparedStatement stmt5 = connection.prepareStatement(sqlint);
+						stmt5.setInt(1, q_id);
+						stmt5.setString(2, a.getDescricao());
+						stmt5.execute();
+
+					}
 					
 				}
 				else	
 				{
-					String insere = "INSERT INTO  texto VALUES (?,?,?);";
-					stmt = connection.prepareStatement(insere);
 					
-					stmt.setInt(1, ((Qmulti)(formulario.getQuestoes().get(i))).getId());
-					stmt.setInt(2, ((Qmulti)(formulario.getQuestoes().get(i))).getId_form());
-					stmt.setString(3, ((Qmulti)(formulario.getQuestoes().get(i))).getDescricao());
+					String insere = "INSERT INTO  texto VALUES (DEFAULT,?,?);";
+					PreparedStatement stmt3 = connection.prepareStatement(insere);
 					
+					stmt3.setInt(1, form_id_novo);
+					stmt3.setString(2, ((Qtexto)(formulario.getQuestoes().get(i))).getDescricao());
+					stmt3.execute();
 				}
-					
+
+
 			}
 			
 			return true;			
