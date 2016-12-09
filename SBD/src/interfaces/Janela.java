@@ -10,7 +10,8 @@ public class Janela extends JFrame
 	public Superior superior;
 	
 	public CriarFormulario criaFormulario;
-	public ResponderFormulario responderFormulario;
+	public SelecionarFormulario selecionarFormulario;
+
 	public ResultadoFormulario resultadoFormulario;
 	
 	public VerificaUsuario verifica;
@@ -59,12 +60,7 @@ public class Janela extends JFrame
 	public void setCriaFormulario(CriarFormulario criaFormulario) {
 		this.criaFormulario = criaFormulario;
 	}
-	public ResponderFormulario getResponderFormulario() {
-		return responderFormulario;
-	}
-	public void setResponderFormulario(ResponderFormulario responderFormulario) {
-		this.responderFormulario = responderFormulario;
-	}
+
 	public VerificaUsuario getVerifica() {
 		return verifica;
 	}
@@ -76,6 +72,13 @@ public class Janela extends JFrame
 	}
 	public void setSuperior(Superior superior) {
 		this.superior = superior;
+	}
+	public void setSelecionarFormulario(SelecionarFormulario select){
+		this.selecionarFormulario = select;
+	}
+	
+	public  SelecionarFormulario getSelecionarFormulario(){
+		return this.selecionarFormulario;
 	}
 	
 	public EscolhaPessoa getEscolhaPessoa() {
@@ -127,11 +130,11 @@ public class Janela extends JFrame
 		criaFormulario.setBounds(10, 200, 1024, 680);
 		criaFormulario.setVisible(false);
 		this.getContentPane().add(criaFormulario);
-				
-		responderFormulario = new ResponderFormulario();
-		responderFormulario.setBounds(10, 200, 1024, 680);
-		responderFormulario.setVisible(false);
-		this.getContentPane().add(responderFormulario);
+		
+		selecionarFormulario = new SelecionarFormulario();
+		selecionarFormulario.setBounds(10, 200, 1024, 680);
+		selecionarFormulario.setVisible(false);
+		this.getContentPane().add(selecionarFormulario);
 		
 		resultadoFormulario = new ResultadoFormulario();
 		resultadoFormulario.setBounds(10, 200, 1024, 680);

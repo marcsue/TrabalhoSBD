@@ -5,13 +5,14 @@ import java.util.ArrayList;
 public class Questao
 {
 	private Integer id;
-	private String descricao;
+	private int id_form;
+	private String pergunta;
 	private static ArrayList<Resposta> respostas = new ArrayList<>();
 	
-	public Questao(Integer id, String descricao) {
-		super();
+	public Questao(int id_form, Integer id, String pergunta) {
 		this.id = id;
-		this.descricao = descricao;
+		this.setId_form(id_form);
+		this.pergunta = pergunta;
 	}
 
 	public Integer getId() {
@@ -23,11 +24,11 @@ public class Questao
 	}
 
 	public String getDescricao() {
-		return descricao;
+		return pergunta;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescricao(String pergunta) {
+		this.pergunta = pergunta;
 	}
 	
 	public boolean addResposta(Resposta reposta)
@@ -60,6 +61,14 @@ public class Questao
 	{
 		for(int i=0;i<respostas.size();i++)
 			System.out.println(respostas.get(i).getId());
+	}
+
+	public int getId_form() {
+		return id_form;
+	}
+
+	public void setId_form(int id_form) {
+		this.id_form = id_form;
 	}
 	
 }

@@ -1,0 +1,19 @@
+﻿
+Trabalho SBD
+
+Grupo Where 
+Gustavo de Souza
+Guilherme de Souza
+Marc Sué 
+
+
+
+
+Motivações:
+
+Após criarmos o diagrama entidade relacionamento, foi necessitado realizar o mapeamento, e nesse momento optamos por utilizar o mapeamento 8A para a parte de generalização de pessoas, justifacado pelo objetivo de concentrar as pesquisas em subclasses , sendo uma boa escolha pois existem poucas subclasses, apenas 4.
+
+Para a realização do mapeamento das agregações utilizamos o método 1, pois nossas agregações não contém atributos que identificam a mesma, sendo assim necessário utilizar as chaves primárias das entidades que fazem parte da agregação. Esse método também é útil o caso que se aplica à nossa situação onde  nossa agregação acaba resultando em mais de uma entidade agregada, por exemplo: temos váias questões de texto.
+
+
+
