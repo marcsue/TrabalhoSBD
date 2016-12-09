@@ -9,6 +9,10 @@ public class Formulario
 	private Date data_inicio;
 	private String cpf;
 	private String titulo;
+	private boolean aluno;
+	private boolean professor;
+	private boolean terceirizado;
+	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -22,9 +26,7 @@ public class Formulario
 		this.cpf = cpf;
 	}
 
-	private boolean aluno;
-	private boolean professor;
-	private boolean terceirizado;
+	
 	public Date getData_fim() {
 		return data_fim;
 	}
