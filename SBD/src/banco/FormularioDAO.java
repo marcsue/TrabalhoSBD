@@ -294,7 +294,7 @@ public class FormularioDAO
 			try //Pegando as respostas multiplaescolha de uma questão
 			{
 			
-				String sql = "SELECT * FROM rmulti WHERE id_form = "+q.getId_form()+" AND id_mult = "+q.getId()+";";
+				String sql = "SELECT * FROM rmult WHERE id_form = "+q.getId_form()+" AND id_mult = "+q.getId()+";";
 
 				PreparedStatement stmt  = connection.prepareStatement(sql);
 			
@@ -342,7 +342,7 @@ public class FormularioDAO
 					//Encontrando as perguntas de multipla escolha e suas respostas
 					
 						int id = resultado.getInt("id");
-						String resposta = resultado.getString("descricacao");
+						String resposta = resultado.getString("descri");
 						q.addItem(id, resposta);
 					}
 				}

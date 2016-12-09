@@ -68,7 +68,8 @@ public class VerificaUsuario  extends JPanel implements ActionListener{
 					JOptionPane.showMessageDialog(null, "Você ainda não é cadastrado, vamos lá!");
 					
 					Janela.getInstance().getVerifica().setVisible(false);
-					Janela.getInstance().getEscolhaPessoa().setVisible(true);				
+					Janela.getInstance().getEscolhaPessoa().setVisible(true);
+					
 				
 				}
 				else
@@ -77,6 +78,7 @@ public class VerificaUsuario  extends JPanel implements ActionListener{
 					
 					Janela.getInstance().getVerifica().setVisible(false);
 					Janela.getInstance().getSuperior().setVisible(true);
+					Janela.getInstance().getSuperior().cpf = caixaCpf.getText();
 				}
 					
 			} catch (ClassNotFoundException e1) {

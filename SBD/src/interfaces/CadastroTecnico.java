@@ -191,6 +191,7 @@ public class CadastroTecnico extends JPanel implements ActionListener {
 			if (salvar())
 			{
 				Janela.getInstance().getSuperior().setVisible(true);
+				Janela.getInstance().getSuperior().cpf = caixaCpf.getText();
 				Janela.getInstance().getCadastrarTecnico().setVisible(false);
 			}
 			

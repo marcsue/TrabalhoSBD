@@ -35,7 +35,7 @@ import java.awt.event.ActionEvent;
 
 public class CriarFormulario extends JInternalFrame {
 	JLabel lblRestries = new JLabel("Restri\u00E7\u00F5es");
-	
+	public String cpf_user;
 	JCheckBox ck_pf = new JCheckBox("Professores");
 	
 	JCheckBox ck_tec = new JCheckBox("T\u00E9cnicos");
@@ -140,7 +140,7 @@ public class CriarFormulario extends JInternalFrame {
 				if(ck_tec.isSelected())
 					rest += 3;
 			novo.setTipo_restricao(rest); // adiciona restrição ao formulário
-			novo.setTitulo("algum");
+			novo.setTitulo(textField.getText());
 			/*datas*/
 			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");;		
 			java.util.Date dataUtil = new java.util.Date();
@@ -152,7 +152,7 @@ public class CriarFormulario extends JInternalFrame {
 			//fim data fim
 			novo.setData_inicio(inicio);
 			novo.setData_fim(fim);
-			novo.setCpf("1111");//CPF do criador;
+			novo.setCpf(cpf_user);//CPF do criador;
             for(pergunta_temp p : psave){//Adiciona as questões ao formulário!
             		if(p.getTipo() == 1){ //texto
             			Qtexto q = new Qtexto(p.getPergunta());
@@ -171,6 +171,7 @@ public class CriarFormulario extends JInternalFrame {
 			try {
 				FormularioDAO conexao = new FormularioDAO();
 				conexao.insereForm(novo);
+				JOptionPane.showMessageDialog(null, "Formulário criado com sucesso!");
 			} catch (ClassNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

@@ -229,6 +229,7 @@ public class CadastroProfessor extends JPanel implements ActionListener{
 			if (salvar())
 			{
 				Janela.getInstance().getSuperior().setVisible(true);
+				Janela.getInstance().getSuperior().cpf = caixaCpf.getText();
 				Janela.getInstance().getCadastrarProfessor().setVisible(false);
 			}
 			

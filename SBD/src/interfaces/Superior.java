@@ -15,7 +15,7 @@ public class Superior extends JPanel implements ActionListener
 	public JButton resFormulario;
 	public JButton resultados;
 	public Integer opcao=0;
-	
+	public String cpf;
 	public Superior() {
 		//CRIANDO A JANELA SEM LAYOUT E DEFININDO O TAMANHO
 		super();
@@ -66,12 +66,13 @@ public class Superior extends JPanel implements ActionListener
 		if(e.getSource().equals(criarFormulario))
 		{
 			Janela.getInstance().getCriaFormulario().setVisible(true);
+			Janela.getInstance().getCriaFormulario().cpf_user = cpf;
 			Janela.getInstance().getSuperior().setVisible(false);
 		}
 		
 		else if (e.getSource().equals(resFormulario))
 		{			
-			Janela.getInstance().getResponderFormulario().setVisible(true);
+			Janela.getInstance().getSelecionarFormulario().setVisible(true);
 			Janela.getInstance().getSuperior().setVisible(false);
 		}
 		else if (e.getSource().equals(resultados))
