@@ -1,8 +1,19 @@
-Na parte de generaliza��o de pessoas, optamos pela 8A, o motivo � que as consultas v�o se concentrar em uma 
-subclasse de cada vez e tamb�m por existirem poucas subclasses.
+﻿
+Trabalho SBD
 
-Nas agrega��es optamos por utilizar o tipo 1, pois nossa agrega��o n�o contava com nenhum atributo que o identifica
-ficando assim dependende das chaves de quem fazer parte da agrega��o. E tamb�m por resultar em mais de uma entidade
-agregada. (temos v�rias quest�es de texto por exemplo).
+Grupo Where 
+Gustavo de Souza
+Guilherme de Souza
+Marc Sué 
+
+
+
+
+Motivações:
+
+Após criarmos o diagrama entidade relacionamento, foi necessitado realizar o mapeamento, e nesse momento optamos por utilizar o mapeamento 8A para a parte de generalização de pessoas, justifacado pelo objetivo de concentrar as pesquisas em subclasses , sendo uma boa escolha pois existem poucas subclasses, apenas 4.
+
+Para a realização do mapeamento das agregações utilizamos o método 1, pois nossas agregações não contém atributos que identificam a mesma, sendo assim necessário utilizar as chaves primárias das entidades que fazem parte da agregação. Esse método também é útil o caso que se aplica à nossa situação onde  nossa agregação acaba resultando em mais de uma entidade agregada, por exemplo: temos váias questões de texto.
+
 
 
